@@ -1,0 +1,60 @@
+
+body,h1,h2,h3,h4,h5,h6 
+{
+    font-family: "Lato", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4  
+{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 
+{
+  background-image: url('https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/82653961_2679405842096152_7684222883735797760_n.jpg?_nc_cat=108&_nc_ohc=Mht6LasEyLcAX_tq9O9&_nc_ht=scontent-mrs2-1.xx&oh=9da5924d451a0d8c6b2b6c985cc1767f&oe=5EA5C41C');
+  min-height: 70vh;
+}
+
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("https://wallpaperplay.com/walls/full/6/8/8/71474.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Education) */
+.bgimg-3 {
+  background-image: url("https://psmag.com/.image/t_share/MTI4NzYxNDYwMzM0NTY1ODU0/shutterstock_213333985jpg.jpg");
+  min-height: 400px;
+}
+
+/* Fourth image (Contact) */
+.bgimg-4 
+{
+    background-image: url("https://free-hd-wallpapers.info/wp-content/uploads/2018/09/contact-wallpaper-contact-slashsquare-jpg-format-1500w-wallpaper.jpg");
+    min-height: 400px;
+  }
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones 
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+*/

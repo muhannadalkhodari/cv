@@ -1,0 +1,308 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" (scroll)="onWindowScroll($event);">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" (click)="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/lightTheme#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="/lightTheme#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="/lightTheme#work" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Work</a>
+    <a href="/lightTheme#education" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-book"></i> Education</a>
+    <a href="/lightTheme#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-address-card"></i> CONTACT</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" [ngClass]="{'w3-show': showMenu}" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="/lightTheme#about" class="w3-bar-item w3-button" (click)="toggleFunction()">ABOUT</a>
+    <a href="/lightTheme#work" class="w3-bar-item w3-button" (click)="toggleFunction()">Work</a>
+    <a href="/lightTheme#education" class="w3-bar-item w3-button" (click)="toggleFunction()">Education</a>
+    <a href="/lightTheme#contact" class="w3-bar-item w3-button" (click)="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-bottommiddle" style="white-space:nowrap; bottom: 2% !important;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+      Muhannad Al-Khodari
+    </span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>I love analyzing problems, and design solutions for them</em></p>
+  <p>
+    Assistant Teacher, Robotics Trainer, Graphic designer, and a developer willing to work on a variety of technical and creative projects and fields including video games, electronic newspapers, embedded systems, smart house appliance and robotics.
+    <br>
+    Interested in making people the best at what they can be, from art and programming to learning to cook.
+    <br>
+    My passion is the concept of NUI "Natural User Interface" and technology immersion in human life. 
+    <br>
+    Always looking for interesting problems to solve. 
+  </p>
+
+
+  <hr>
+
+  <p class="w3-large w3-center w3-padding-16">
+    I'm really good at:
+  </p>
+  
+  <p class="w3-wide"><i class="devicon-html5-plain"></i><i class="devicon-css3-plain"></i>Web Design (HTML, CSS)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:80%">80%</div>
+  </div>
+  <p class="w3-wide"><i class="devicon-angularjs-plain"></i><i class="devicon-javascript-plain"></i>Web Programming (JavaScript, Angular)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide"><i class="devicon-photoshop-plain"></i>Graphic Design (Photoshop)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide"><i class="devicon-dot-net-plain"></i><i class="devicon-csharp-plain"></i><i class="devicon-cplusplus-plain"></i>Microsoft Programming (Asp.Net, C#, C++)</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-reddit-alien" aria-hidden="true"></i>Robotics</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide"><i class="fa fa-microchip" aria-hidden="true"></i>Electronics</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:60%">60%</div>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Work Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">Work</span>
+  </div>
+</div>
+
+<!-- Container (Work Section) -->
+<div class="w3-content w3-container w3-padding-64" id="work">
+  <!-- <h3 class="w3-center">MY WORK</h3> -->
+  <p class="w3-center"><em>Here is a summary of my experience</em></p><br>
+  
+  <!-- Responsive Grid. Two columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Software Developer</h3>
+        </header>
+        <div class="w3-container">
+          <div class="w3-margin">
+            <img src="http://www.syriatel.sy/sites/all/themes/syriatel/logo.png" title="Syriatel" alt="Syriatel" class="" style="height:15vh;">
+          </div>
+          <div>
+            <p>
+              Analyzing buisness, brain-storming ideas and designing solutions using multiple technolgies.
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          Since: Dec. 2016
+        </footer>
+      </div>
+    </div>
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Robotics Trainer</h3>
+        </header>
+        <div class="w3-container">
+          <div class="w3-margin">
+            <a href="https://www.facebook.com/HmkRoboTech">
+              <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/15032766_1011655165629244_8163403390277347051_n.jpg?_nc_cat=104&_nc_ohc=XAdpZJbIDyYAX_Vsi74&_nc_ht=scontent-mrs2-1.xx&oh=5eaf7cc59d13992db7803e1ba6459cb4&oe=5ED25322" title="RoboTech Club" alt="RoboTech Club" class="w3-circle" style="height:15vh;">
+            </a> 
+            <a href="https://www.facebook.com/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D9%91%D8%A9-%D8%A3%D8%B3%D9%88%D8%A9-USWA-Academy-1063589860322163/">
+              <img src="https://scontent-mrs2-2.xx.fbcdn.net/v/t1.0-9/44272_1258967160784431_190970510413239793_n.jpg?_nc_cat=106&_nc_ohc=B4Q6uptaDc4AX_1L1Rl&_nc_ht=scontent-mrs2-2.xx&oh=c6d382fec3758264c0c05600f6a9d0cd&oe=5ECF6FB4" title="USWA Academy" alt="USWA Academy" class="w3-circle" style="height:15vh;">
+            </a>
+            <a href="https://www.facebook.com/aicgrouptraining">
+              <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/74526543_354723598642018_4600192668763422720_n.jpg?_nc_cat=103&_nc_ohc=aVFVdhfjavIAX85N9SU&_nc_ht=scontent-mrs2-1.xx&oh=0373dd6b52f8a2cc6b2236d110d45915&oe=5ED8BCBB" title="مؤسسة الأبجدية الدولية للتدريب والتأهيل" alt="مؤسسة الأبجدية الدولية للتدريب والتأهيل" class="w3-circle" style="height:15vh;">
+            </a>
+          </div>
+          <div>
+            <p>
+              Training the next genarations to lead the robotic future ahead of us, from kindergarten to university.
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          Since: Mar. 2014
+        </footer>
+      </div>
+    </div>
+
+  </div>
+  <div class="w3-row-padding w3-center">
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Content Editor</h3>
+        </header>
+        <div class="w3-container">
+          <div class="w3-margin">
+            <a href="https://mangam.info/">
+              <img src="https://mangam.info/wp-content/uploads/2019/01/identity.png" title="منجم" alt="منجم" class="" style="height:13vh;">
+            </a>
+            <a href="https://www.roboticarena.info/">
+              <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t31.0-8/p960x960/16113320_239801916462280_3649860450475779002_o.png?_nc_cat=103&_nc_ohc=zYLP2GV-Qq0AX9QGcVQ&_nc_ht=scontent-mrs2-1.xx&oh=eda506e39873a73747d24230d047c5ab&oe=5E9A8DFF" title="Robotic Arena" alt="Robotic Arena" class="w3-circle" style="height:15vh;">
+            </a>
+          </div>
+          <div>
+            <p>
+              Specialized robotic educational tutorials, general entertaining or simplified science, it is our duty to expand the Arabic content on the web.
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          Since: Jan. 2017
+        </footer>
+      </div>
+    </div>
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Assistant Teacher</h3>
+        </header>
+        <div class="w3-container">
+          <div class="w3-margin">
+            <img src="http://www.damascusuniversity.edu.sy/FCKBIH/image/Images%201/q.jpg" title="Damascus University" alt="Damascus University" class="" style="height:15vh;">
+          </div>
+          <div>
+            <p>
+              Teaching is a calling, not a job. I was lucky to teach Computer Engineering students about Programming Algorithms and Robotics. 
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          From Feb. 2015 to Jun. 2016
+        </footer>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Third Parallax Image with Education Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">Education</span>
+  </div>
+</div>
+
+<!-- Container (Education Section) -->
+<div class="w3-content w3-container w3-padding-64" id="education">
+  <!-- <h3 class="w3-center">MY Education</h3> -->
+  <p class="w3-center w3-text-white"><em>Here is a summary of my experience</em></p><br>
+  
+  <!-- Responsive Grid. Two columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Computer Engineering</h3>
+        </header>
+        
+        <div class="w3-container">
+          <div class="w3-margin">
+            <img src="http://www.damascusuniversity.edu.sy/FCKBIH/image/Images%201/q.jpg" title="Damascus University" alt="Damascus University" class="" style="height:15vh;">
+          </div>
+          <div>
+            <p>
+              Damascus University
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          From 2008 to 2014
+        </footer>
+      </div>
+    </div>
+
+    <div class="w3-col l6">
+      <div class="w3-card-4 w3-margin-bottom">
+        <header class="w3-container w3-light-grey">
+          <h3>Master of Buisness Administration</h3>
+        </header>
+        
+        <div class="w3-container">
+          <div class="w3-margin">
+            <img src="https://svuonline.org/sites/all/themes/atsvu/css/images/logo.png" title="Syrian Virtual University" alt="Syrian Virtual University" class="" style="height:15vh;">
+          </div>
+          <div>
+            <p>
+              Syrian Virtual University
+            </p>
+          </div>
+        </div>
+        <footer class="w3-dark-grey w3-padding-small">
+          From 2018 to 2020
+        </footer>
+      </div>
+    </div>
+
+  </div>
+
+  
+</div>
+
+<!-- Fourth Parallax Image with Contact Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">Contact Me</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <!-- <h3 class="w3-center">WHERE I WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p> -->
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col l3 m3 w3-hide-small w3-container">
+      <div class="w3-center">
+        <img src="../../assets/me.jpg" class="w3-image w3-round" style="width:100%; min-width: 150px;">
+      </div>
+    </div>
+    <div class="w3-col l9 m9 w3-panel">
+      <div class="w3-margin w3-padding-large" style="font-size: 2vw;">
+        <div class="w3-row">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Damascus, Syria<br>
+        </div>
+        <div class="w3-row">
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> +963 931874562<br>
+        </div>
+        <div class="w3-row">
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> muhannad.al.khodari@outlook.com<br>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+ 
