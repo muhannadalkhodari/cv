@@ -13,9 +13,8 @@ const routes: Routes =
     { path: 'darkTheme', component: DarkThemeComponent },
     { path: 'colorsTheme', component: ColorsThemeComponent },
     { path: 'cartoonsTheme', component: CartoonThemeComponent },
-    { path: 'home', component: HomeComponent },
-    { path: '**', component: LightThemeComponent },
-    { path: '', component: LightThemeComponent }
+    { path: '**', component: HomeComponent },
+    { path: '', component: HomeComponent }
 ];
 
 @NgModule({
