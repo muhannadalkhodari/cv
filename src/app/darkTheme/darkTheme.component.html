@@ -1,3 +1,187 @@
-<p>
-  darkTheme works!
-</p>
+<body class="w3-black">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img [src]='data.contactPhotoUrl' style="width:100%" class="w3-grayscale-max w3-opacity">
+  <a href="./" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="./darkTheme#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="./darkTheme#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="./darkTheme#education" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-book w3-xxlarge"></i>
+    <p>Education</p>
+  </a>
+  <a href="./darkTheme#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="./" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
+    <a href="./darkTheme#about" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
+    <a href="./darkTheme#photos" class="w3-bar-item w3-button" style="width:20% !important">PHOTOS</a>
+    <a href="./darkTheme#education" class="w3-bar-item w3-button" style="width:20% !important">Education</a>
+    <a href="./darkTheme#contact" class="w3-bar-item w3-button" style="width:20% !important">CONTACT</a>
+  </div>
+</div>
+
+
+
+<!-- Page Content -->
+<div class="w3-padding" id="main">
+
+  <!-- Header/Home -->
+  <header class="w3-display-container w3-center w3-black" id="home">
+    <img [src]='data.contactDarkPhotoUrl' class="w3-image w3-grayscale-max" alt="boy" width="100%">
+    <div class="w3-display-topleft w3-container w3-padding-small">
+      <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> {{data.fullName}}</h1>
+      <p>{{data.aboutMe_short}}</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+
+    <h2 class="w3-text-light-grey">{{data.fullName}}</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>
+      <span *ngFor="let item of data.aboutMe_long">
+        {{item}}
+        <br>
+      </span>
+    </p>
+
+
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+
+    <div class="w3-wide" *ngFor="let skill of data.skills">
+      <p>
+        <!-- <span *ngFor="let icon of skill.icons">
+          <i [class]='icon'></i>
+        </span> -->
+        {{skill.name}}
+      </p>
+      <div class="w3-white">
+        <div class="w3-dark-grey" [style.width]="skill.value + '%'" style="height:28px;">
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button> -->
+
+  <!-- End About Section -->
+  </div>
+    
+  <!-- Grid for work tables -->
+  <div class="w3-content w3-justify w3-padding-64">
+    <h3 class="w3-padding-16 w3-text-light-grey" id="#work">My Work</h3>
+    <div class="w3-row-padding" style="margin:0 -16px">
+
+      <div *ngFor="let experience of data.experiences" class="w3-col l6">
+        <div class="w3-card-4 w3-margin-bottom w3-dark-gray w3-text-white w3-center w3-opacity w3-hover-opacity-off">
+          <header class="w3-container w3-light-grey w3-padding">
+            <div class="">
+              <a *ngFor="let place of experience.places" [href]="place.link">
+                <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
+              </a> 
+            </div>
+          </header>
+          <div class="w3-container">
+            <h3><b>{{experience.title}}</b></h3>
+            <div>
+              <p>
+                {{experience.description}}
+              </p>
+            </div>
+          </div>
+          <footer class="w3-light-grey w3-padding-small">
+            <span *ngIf="!experience.to">Since {{experience.from}} </span>
+            <span *ngIf="experience.to"> From {{experience.from}}  to {{experience.to}}</span>
+          </footer>
+        </div>
+      </div>
+
+    <!-- End Grid of work tables -->
+    </div>
+
+  </div>
+  
+  <!-- Education -->
+  <div class="w3-content w3-justify w3-padding-64">
+    <h3 class="w3-padding-24 w3-text-light-grey">My Education</h3>
+
+    <div *ngFor="let study of data.studies" class="w3-row w3-margin">
+      <div class="w3-col w3-white w3-center" style="width: 13%;">
+        <a *ngFor="let place of study.places" [href]="place.link">
+          <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': false}" class="w3-left" style="width:115px">
+        </a> 
+      </div>
+      <div class="w3-rest">
+        <span class="w3-xlarge w3-margin-top"><b>{{study.title}}</b></span><br>
+        <span class="w3-large">{{study.description}}</span><br>
+        <span class="w3-large" *ngIf="!study.to">Since {{study.from}} </span>
+        <span class="w3-large" *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
+      </div>
+      
+      
+      
+    </div>  
+      
+  </div>
+  
+
+  
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+
+      <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-xxlarge">
+        <span class="w3-margin-right">
+          <i [class]="contactDetail.icon"></i>
+        </span>
+        <span>
+           {{contactDetail.detail}}<br>
+        </span>
+      </div>
+
+    </div><br>
+    
+
+    
+  <!-- End Contact Section -->
+  </div>
+  
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+</body>

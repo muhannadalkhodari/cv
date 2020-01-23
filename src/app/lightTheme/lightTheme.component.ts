@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HostListener } from '@angular/core';
+import { DataService } from './../services/data.service';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,10 @@ import { HostListener } from '@angular/core';
 })
 export class LightThemeComponent implements OnInit {
 
-  constructor() { }
+  constructor
+  (
+    public data: DataService
+  ) { }
 
   showMenu: boolean = false;
 
