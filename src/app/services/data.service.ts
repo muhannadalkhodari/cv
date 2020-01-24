@@ -14,7 +14,7 @@ export class DataService
   lastName = 'Al-Khodari';
   fullName = this.firstName + ' ' + this.lastName;
 
-  aboutMe_short = 'I love analyzing problems, and design solutions for them';
+  aboutMe_short = 'I love analyzing problems, and designing solutions for them';
   aboutMe_long =
   [
     "Assistant Teacher, Robotics Trainer, Graphic designer, and a developer willing to work on a variety of technical and creative projects and fields including video games, electronic newspapers, embedded systems, smart house appliance and robotics.",
@@ -116,7 +116,7 @@ export class DataService
           circle: true
         },
         {
-          name: "مؤسسة الأبجدية الدولية للتدريب والتأهيل",
+          name: "Al-Abjadiya Institute for Training",
           link: "https://www.facebook.com/aicgrouptraining",
           imageUrl: "https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/74526543_354723598642018_4600192668763422720_n.jpg?_nc_cat=103&_nc_ohc=aVFVdhfjavIAX85N9SU&_nc_ht=scontent-mrs2-1.xx&oh=0373dd6b52f8a2cc6b2236d110d45915&oe=5ED8BCBB",
           circle: true
@@ -215,6 +215,7 @@ export class DataService
   contactPhotoUrl: string = "https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/s960x960/79756462_2595092047194199_4987843922840518656_o.jpg?_nc_cat=105&_nc_ohc=snwz_x_InB4AX94BlZL&_nc_ht=scontent-mrs2-1.xx&_nc_tp=1002&oh=b99d7551456027f6a33325b9f0e4b78c&oe=5ED73532";
 
   contactDarkPhotoUrl: string = "https://scontent-mrs2-2.xx.fbcdn.net/v/t1.0-0/p180x540/80213518_2603822486321155_8541400009856253952_o.jpg?_nc_cat=106&_nc_ohc=f4Q_l7WhcP8AX8St3mJ&_nc_ht=scontent-mrs2-2.xx&_nc_tp=1002&oh=b0d1d4a654b81d6372568f0cce877b02&oe=5E90100F";
+  contactSmallDarkPhotoUrl: string = "https://lh3.googleusercontent.com/zEw_6c8Tr_gYZDshWh0IVEFTFATUGr3_q7XJc-8yeLIfCUp_HuTGnDKF9Xw14Ay1cVkmLVFybGxTPLJxM9KX4tP9a5gNkME2878RwxBmi29SpguAnO0sTDnzV5n-x1VesOAgkUjRDSZbnjpGQxWf_XYtJmoYTUwTH5sViTIaArnH7NpNrHMqR2FO9zJnasPxQSgAXfC3ADMWQbfYXxUtwu4d7oXLOJumWO4XxVE1-bp4nH4S_Crhxcfui7L3LccW9UqO9eKZIbQbqJBvYSOVqraTAO0KY8AnT5lqgfNNlE6ZutShzbMjNQqsWJQxQWhh-PY_p_RBjH1Ko7TLv6bojcTAkHT9Fg8Sk6ho080SDNnKvt64b7qLVJdnug8aUOsJRph-XMPZg4bECYswBqQ0SUxW-rImnk8kUSfFQ5HpiL_JdXK4Lww_g3MwdNpAIhUYbs5qfnj5jr6HMLAtGd3KcGdBsHw6RNEV0PyQCHBIsSEbJBrZOdnukWOe3bQb3QgA-85R0bPQMQmUQORNyituD-fvUVjYnlS0rs3m8EmhWZWj__WgQq7dijtgQpmj2MdsiZebR3QXjzP3REIX58dISL9Nf-qOTEJ4QPECTp_Wd29vMgqIRs9D37n6f5z1LsVgBLuBcyY97ywOg7rFwhh5ff2omh95aJZFIkpFl2k9Vvb-ZuPcRjBcolva=w517-h689-no";
 
 }
 

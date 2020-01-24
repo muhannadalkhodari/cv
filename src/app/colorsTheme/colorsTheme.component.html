@@ -1,3 +1,186 @@
-<p>
-  colorsTheme works!
-</p>
+<body class="w3-light-grey">
+
+<!-- Top Bar -->
+<div *ngIf="!showMenu" [class]="'w3-container w3-center w3-margin-bottom w3-' + selectedColor">
+  <span class="w3-button w3-hover-opacity w3-left">
+    <a href="./"><i class="fa fa-home"></i></a>
+  </span>
+  <span class="w3-button w3-hover-opacity w3-right" (click)="showMenu = true;">
+    Change Color
+    <i class="fa fa-pencil-square-o"></i>
+  </span>
+</div>
+
+<!-- Curtain Menu -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" [style.display]="showMenu? 'block':'none'" style="width: 100%; padding-top:100px; opacity: 0.9;" id="mySidebar">
+  <a href="javascript:void(0)" (click)="showMenu = flase;" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <span *ngFor="let color of colors" 
+          [class]="'w3-bar-item w3-button w3-hover-black w3-text-' + color"
+          (click)="selectedColor = color; showMenu = false"
+    >
+      {{color}}
+    </span>
+  </div>
+</nav>
+
+<!-- Page Container -->
+<div class="w3-content " style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding ">
+  
+    <!-- Left Column -->
+    <div class="w3-col l4 m5">
+      <div class="w3-white w3-text-grey w3-card w3-margin-top w3-margin-bottom">
+        
+        <!-- Avatar -->
+        <div class="w3-display-container">
+          <img [src]="data.contactPhotoUrl" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-white">
+            <h2 class="w3-margin-left">{{data.fullName}}</h2>
+          </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="w3-container w3-margin-top w3-margin-right w3-margin-left">
+          {{data.aboutMe_short}}.
+        </div>
+
+        <hr>
+
+        <!-- Contact -->
+        <div class="w3-container w3-margin-right w3-margin-left" style="overflow-wrap: break-word;">
+          <div *ngFor="let contactDetail of data.contactDetails" class="w3-row">
+            <span [class]="'w3-margin-right w3-large w3-text-' + selectedColor">
+              <i [class]="contactDetail.icon"></i>
+            </span>
+            <span>
+               {{contactDetail.detail}}<br>
+            </span>
+          </div>
+        </div>
+          
+        <hr>
+
+        <!-- Skills -->
+        <div class="w3-container w3-margin-right w3-margin-left" style="margin-bottom: 12px;">
+          <div class="w3-large w3-margin-bottom">
+            <b>
+              <i [class]="'fa fa-asterisk fa-fw w3-margin-right w3-text-' + selectedColor"></i>
+              Skills
+            </b>
+          </div>
+  
+          <div *ngFor="let skill of data.skills">
+            <span>
+              {{skill.name}}
+            </span>
+            <div class="w3-light-grey w3-round-xlarge w3-small w3-margin-bottom">
+              <div [class]="'w3-container w3-center w3-round-xlarge w3-' + selectedColor" [style.width]="skill.value + '%'">
+                {{skill.value}}%
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+      </div>
+    <!-- End Left Column -->
+    </div>
+  
+
+    <!-- Right Column -->
+    <div class="w3-col l8 m7 w3-margin-top">
+    
+      <!-- Work -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+
+        <h2 class="w3-text-grey w3-padding-16 w3-xxlarge">
+          <i [class]="'fa fa-suitcase fa-fw w3-margin-right w3-text-' + selectedColor"></i>
+          Work Experience
+        </h2>
+        
+        <div *ngFor="let experience of data.experiences, let experiences_index = index" class="w3-container">
+
+          <h6 [class]="'w3-text-' + selectedColor">
+            <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+            <span *ngIf="!experience.to">Since {{experience.from}} </span>
+            <span *ngIf="experience.to" > From {{experience.from}}  to {{experience.to}}</span>
+          </h6>
+
+          <h5 class="w3-opacity">
+            <b class="w3-margin-right">
+              {{experience.title}} / 
+            </b>
+            <span *ngFor="let place of experience.places, let places_index = index">
+              <a [href]="place.link">{{place.name}}</a>
+              <span *ngIf="places_index!=(experience.places.length-1)">, </span>
+              <span *ngIf="places_index==(experience.places.length-1)">. </span>
+            </span>
+          </h5>
+
+          <p>{{experience.description}}</p>
+
+          <hr *ngIf="experiences_index!=(data.experiences.length-1)">
+
+        </div>
+        
+      </div>
+
+      <!-- Education -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+
+        <h2 class="w3-text-grey w3-padding-16 w3-xxlarge">
+          <i [class]="'fa fa-certificate fa-fw w3-margin-right w3-text-' + selectedColor"></i>
+          Education
+        </h2>
+        
+        <div *ngFor="let study of data.studies, let studies_index = index" class="w3-container">
+
+          <h6 [class]="'w3-text-' + selectedColor">
+            <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+            <span *ngIf="!study.to">Since {{study.from}} </span>
+            <span *ngIf="study.to" > From {{study.from}}  to {{study.to}}</span>
+          </h6>
+
+          <h5 class="w3-opacity">
+            <b class="w3-margin-right">
+              {{study.title}} / 
+            </b>
+            <span *ngFor="let place of study.places, let places_index = index">
+              <a [href]="place.link">{{place.name}}</a>
+              <span *ngIf="places_index!=(study.places.length-1)">, </span>
+              <span *ngIf="places_index==(study.places.length-1)">. </span>
+            </span>
+          </h5>
+          
+          <hr *ngIf="studies_index!=(data.studies.length-1)">
+
+        </div>
+        
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+
+<footer [class]="'w3-container w3-center w3-margin-top w3-' + selectedColor">
+  <p style="opacity: 0;"> Find me on social media.</p>
+  <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p> -->
+</footer>
+
+</body>

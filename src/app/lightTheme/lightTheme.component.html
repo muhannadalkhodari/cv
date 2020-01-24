@@ -159,31 +159,32 @@
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-  <div class="w3-row w3-padding-32 w3-section">
+<div class="w3-content w3-container w3-padding-32" id="contact">
+  <div class="">
+    <div class="w3-cell-row w3-card w3-margin" style="width: auto !important;">
 
-    <div class="w3-col l3 m3 w3-hide-small w3-container">
-      <div class="w3-center">
-        <img [src]="data.contactPhotoUrl" class="w3-image w3-round" style="width:100%; min-width: 150px;">
+      <div class="w3-cell w3-cell-middle w3-hide-small" style="width: 20.5%;">
+        <img [src]="data.contactPhotoUrl" class="w3-image">
       </div>
-    </div>
-
-    <div class="w3-col l9 m9 w3-panel">
-      <div class="w3-margin w3-padding-large" style="font-size: 2vw;">
-
-        <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black">
-          <span class="w3-margin-right">
-            <i [class]="contactDetail.icon"></i>
-          </span>
-          <span>
-             {{contactDetail.detail}}<br>
-          </span>
+  
+      <div class="w3-cell w3-cell-middle">
+        <div class="w3-margin-left w3-padding-16 w3-large w3-container">
+  
+          <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black" style="overflow-wrap: break-word;">
+            <span class="w3-margin-right">
+              <i [class]="contactDetail.icon"></i>
+            </span>
+            <span>
+               {{contactDetail.detail}}<br>
+            </span>
+          </div>
+          
         </div>
-        
       </div>
+  
     </div>
-
   </div>
+  
 </div>
 
 

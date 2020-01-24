@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from './../services/data.service';
 
 @Component({
   selector: 'app-colorsTheme',
@@ -7,7 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColorsThemeComponent implements OnInit {
 
-  constructor() { }
+  constructor
+  (
+    public data: DataService
+  ) { }
+
+  showMenu: boolean = false;
+
+  colors: string[] = 
+  [
+    "red",
+    "pink",
+    "purple",
+    "indigo",
+    "blue",
+    "teal",
+    "green",
+    "yellow",
+    "orange",
+    "brown"
+  ];
+
+  selectedColor: string = 'brown';
 
   ngOnInit() {
   }

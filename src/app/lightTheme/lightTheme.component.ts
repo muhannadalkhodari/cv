@@ -1,5 +1,5 @@
-import { DataService } from './../services/data.service';
 import { Component, OnInit, HostListener } from '@angular/core';
+import { DataService } from './../services/data.service';
 
 
 @Component({
