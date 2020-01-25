@@ -1,0 +1,39 @@
+.outer-wrapper 
+{
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100vh);
+    transform-origin: top left;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar 
+{
+    display:none;
+}
+
+.wrapper 
+{
+    display: flex;
+    flex-direction: row;
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+}
+
+.slide 
+{
+    height: 100vh;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.marker
+{
+    position: relative;
+    cursor: pointer;
+}
+
