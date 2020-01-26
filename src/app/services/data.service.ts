@@ -29,8 +29,8 @@ export class DataService
       name: "Web Design (HTML, CSS)",
       icons:
       [
-        "devicon-html5-plain",
-        "devicon-css3-plain"
+        "devicon-html5-plain w3-text-red",
+        "devicon-css3-plain w3-text-cyan"
       ],
       value: 80
     },
@@ -38,16 +38,8 @@ export class DataService
       name: "Web Programming (JavaScript, Angular)",
       icons:
       [
-        "devicon-angularjs-plain",
-        "devicon-javascript-plain"
-      ],
-      value: 70
-    },
-    {
-      name: "Graphic Design (Photoshop)",
-      icons:
-      [
-        "devicon-photoshop-plain"
+        "devicon-angularjs-plain w3-text-red",
+        "devicon-javascript-plain w3-text-amber"
       ],
       value: 70
     },
@@ -55,9 +47,17 @@ export class DataService
       name: "Microsoft Programming (Asp.Net, C#, C++)",
       icons:
       [
-        "devicon-dot-net-plain",
-        "devicon-csharp-plain",
-        "devicon-cplusplus-plain"
+        "devicon-dot-net-plain w3-text-blue",
+        "devicon-csharp-plain w3-text-deep-purple",
+        "devicon-cplusplus-plain w3-text-red"
+      ],
+      value: 70
+    },
+    {
+      name: "Graphic Design (Photoshop)",
+      icons:
+      [
+        "devicon-photoshop-plain w3-text-blue"
       ],
       value: 70
     },
@@ -65,7 +65,7 @@ export class DataService
       name: "Robotics",
       icons:
       [
-        "fa fa-reddit-alien"
+        "fa fa-reddit-alien w3-text-blue-gray"
       ],
       value: 70
     },
@@ -73,7 +73,7 @@ export class DataService
       name: "Electronics",
       icons:
       [
-        "fa fa-microchip"
+        "fa fa-microchip w3-text-black"
       ],
       value: 60
     }
