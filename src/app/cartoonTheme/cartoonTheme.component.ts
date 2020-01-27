@@ -31,7 +31,7 @@ export class CartoonThemeComponent implements OnInit
 
   showModal = false;
 
-  photosUrl: string = "url('/assets/Muhannadonia_";
+  photosUrl: string = "url('assets/Muhannadonia_";
 
   selectedMarker: string = null;
 
