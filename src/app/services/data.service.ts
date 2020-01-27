@@ -35,7 +35,7 @@ export class DataService
       value: 80
     },
     {
-      name: "Web Programming (JavaScript, Angular)",
+      name: "Web Programming (Angular, JavaScript)",
       icons:
       [
         "devicon-angularjs-plain w3-text-red",

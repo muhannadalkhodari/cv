@@ -31,8 +31,8 @@
     overflow: hidden;
 }
 
-.marker
+
+.horizontal-container
 {
-    position: relative;
-    cursor: pointer;
+    display: flex;    overflow-x: auto;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from './../services/data.service';
+import { timer } from 'rxjs';
 
 @Component
 ({
@@ -30,14 +31,17 @@ export class CartoonThemeComponent implements OnInit
   wrapperWidth = 0;
 
   showModal = false;
+  modalTop: number = -100;
 
   photosUrl: string = "url('assets/Muhannadonia_";
 
   selectedMarker: string = null;
+  selectedExperience = null;
 
   ngOnInit() 
   {
     this.updateSizes();
+    this.showModalSmoothly('Welcome');
   }
 
   @HostListener('window:resize', ['$event'])
@@ -63,6 +67,23 @@ export class CartoonThemeComponent implements OnInit
       this.wrapperWidth += s.width; 
       this.slides.push(s);
     });
+  }
+
+  showModalSmoothly(marker: string)
+  {
+    this.showModal = true;
+    this.selectedMarker = marker;
+
+    // Since CCS transition did not work on 'top' value :(
+    this.modalTop = -100;
+    let t = timer(0, 10);
+    t.subscribe(()=>
+    {
+      if(this.modalTop < 0)
+      {
+        this.modalTop = this.modalTop + 1;
+      }
+    })
   }
 
 }
