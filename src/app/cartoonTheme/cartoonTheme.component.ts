@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from './../services/data.service';
 import { timer } from 'rxjs';
+import { ViewportScroller } from '@angular/common';
 
 @Component
 ({
@@ -13,21 +14,22 @@ export class CartoonThemeComponent implements OnInit
 
   constructor
   (
-    public data: DataService
+    public data: DataService,
+    private viewportScroller: ViewportScroller
   ) { }
 
   originalSlides: slide[] = 
   [
-    { width: 500 ,   markerMarginLeft: 110,    markerMarginTop : 254,   photoUrl: null, marker: "Welcome"   },
-    { width: 800 ,   markerMarginLeft: 110,    markerMarginTop : 299,   photoUrl: null, marker: "Skills"    },
-    { width: 1000,   markerMarginLeft: 420,    markerMarginTop : 214,   photoUrl: null, marker: "Education" },
-    { width: 1000,   markerMarginLeft: 595,    markerMarginTop : 174,   photoUrl: null, marker: "Work"      },
-    { width: 700 ,   markerMarginLeft: 650,    markerMarginTop : 224,   photoUrl: null, marker: "Contact"   }
+    { width: 1000 ,   markerMarginLeft: 180 ,    markerMarginTop : 500,   photoUrl: null, marker: "Welcome"   },
+    { width: 1600 ,   markerMarginLeft: 200 ,    markerMarginTop : 575,   photoUrl: null, marker: "Skills"    },
+    { width: 2000 ,   markerMarginLeft: 800 ,    markerMarginTop : 400,   photoUrl: null, marker: "Education" },
+    { width: 2000 ,   markerMarginLeft: 1156,    markerMarginTop : 320,   photoUrl: null, marker: "Work"      },
+    { width: 1400 ,   markerMarginLeft: 1270,    markerMarginTop : 428,   photoUrl: null, marker: "Contact"   }
   ];
 
   slides: slide[] = [];
 
-  fullHeight = 576;
+  fullHeight = 1113;
   wrapperWidth = 0;
 
   showModal = false;
@@ -41,6 +43,7 @@ export class CartoonThemeComponent implements OnInit
   ngOnInit() 
   {
     this.updateSizes();
+    this.viewportScroller.scrollToAnchor('Work');
     this.showModalSmoothly('Welcome');
   }
 
@@ -50,11 +53,18 @@ export class CartoonThemeComponent implements OnInit
     this.updateSizes();
   }
 
+  // @HostListener('window:wheel', ['$event']) 
+  // windowScrolled(event) 
+  // {
+  //   let x = this.viewportScroller.scrollToAnchor('Work');
+  //   console.log("scrolling " + x);
+  // }
+
   updateSizes()
   {
     this.slides = [];
     this.wrapperWidth = 0;
-    let heightRatio = (window.innerHeight / 576);
+    let heightRatio = (window.innerHeight / this.fullHeight);
     document.documentElement.style.setProperty('--heightRatio' , heightRatio.toString());
     this.originalSlides.forEach((originalSlide, i) => 
     {

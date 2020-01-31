@@ -13,13 +13,14 @@
            [style.margin-top]="slide.markerMarginTop + 'px'"
            [style.margin-left]="slide.markerMarginLeft + 'px'"    
       >
-        <div class=" w3-jumbo" style="cursor: pointer; width: 37px; text-shadow:1px 1px 0 #444"
+        <div class=" " style="cursor: pointer; width: 200px; text-shadow:1px 1px 0 #444"
              (click)="showModalSmoothly(slide.marker)"
+             [title] = 'slide.marker'
         >
-          <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i>
-          <!-- <span class="w3-xxlarge w3-text-white">
-            <b>{{slide.marker}}</b>
-          </span> -->
+          <i class="fa fa-map-marker w3-text-red w3-jumbo" aria-hidden="true"></i>
+          <span class="w3-xlarge w3-text-red w3-white w3-opacity" style="position: relative; left: -25px">
+            <br><b>{{slide.marker}}</b>
+          </span>
         </div>
         <div></div>
         
@@ -32,7 +33,9 @@
 
 <!-- The Modal -->
 <div class="w3-modal" *ngIf="showModal" style="padding-top: 0; display: block;">
-  <div class="w3-modal-content" style="width: 80%;" [style.top]="modalTop + '%'">
+  <div class="w3-modal-content" style="width: 80%;" [style.top]="modalTop + '%'"
+       [ngClass]="{'w3-light-gray': selectedMarker == 'Credits'}"
+  >
     <div class="w3-container">
       <span (click)="showModal = false; selectedExperience= null;"
              class="w3-button w3-display-topright"
@@ -60,9 +63,10 @@
                 <i>Feel free to explore my town..</i>
               </div>
             </div>
-            <div class="w3-large">
+            <div class="w3-xlarge">
               <p><i>
-                <b>Hint:</b> Click on the red markers
+                <b>Hint:</b> Click on the red markers 
+                <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i>
               </i></p>
             </div>
           </div>
@@ -76,7 +80,7 @@
                 {{skill.name}}
               </p>
               <div class="w3-light-grey w3-small">
-                <div class="w3-container w3-green w3-center" [style.width]="skill.value + '%'">
+                <div class="w3-container w3-red w3-center" [style.width]="skill.value + '%'">
                   {{skill.value}}%
                 </div>
               </div>
@@ -147,7 +151,7 @@
           </div>
 
           <div *ngIf="selectedMarker == 'Contact'" class="w3-row-padding w3-margin-top">
-            <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black" style="overflow-wrap: break-word;">
+            <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black w3-margin" style="overflow-wrap: break-word;">
               <span class="w3-margin-right">
                 <i [class]="contactDetail.icon"></i>
               </span>
@@ -161,10 +165,40 @@
             </div>
           </div>
 
+          <div *ngIf="selectedMarker == 'Credits'" class="w3-row-padding w3-margin-top">
+            <div class="w3-row w3-margin w3-padding w3-xlarge">
+              Background was created using:
+            </div>
+            <div class="w3-row w3-margin w3-padding">
+              <a href="https://icograms.com">
+                <img src="https://icograms.com/images/logo.svg" [alt]="icogram" style="height:100px;">
+              </a> 
+            </div>
+            
+            <hr style="border-top: 1px dashed black;">
+
+            <div class="w3-row w3-margin w3-padding w3-xlarge">
+              Cartoons were created using:
+            </div>
+            <div class="w3-row w3-margin w3-padding">
+              <a href="https://www.bitmoji.com/">
+                <img src="https://www.bitmoji.com/img/0e2df681.logo-home.cache.png" [alt]="Bitmoji" style="height:100px;">
+              </a>              
+            </div>
+          </div>
+
           
         </div>
 
       </div>
     </div>
+  </div>
+</div>
+
+<div style='position: fixed; right: 0; bottom: 0;'>
+  <div class="w3-container w3-button w3-round w3-white w3-opacity"
+       (click)="showModalSmoothly('Credits')"
+  >
+    <b>Credits</b>
   </div>
 </div>
