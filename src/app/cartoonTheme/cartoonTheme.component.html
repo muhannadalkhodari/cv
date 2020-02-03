@@ -13,7 +13,7 @@
            [style.margin-top]="slide.markerMarginTop + 'px'"
            [style.margin-left]="slide.markerMarginLeft + 'px'"    
       >
-        <div class=" " style="cursor: pointer; width: 200px; text-shadow:1px 1px 0 #444"
+        <div class="marker" style="cursor: pointer; width: 50px; text-shadow:1px 1px 0 #444"
              (click)="showModalSmoothly(slide.marker)"
              [title] = 'slide.marker'
         >
@@ -202,3 +202,24 @@
     <b>Credits</b>
   </div>
 </div>
+
+<div style='position: fixed; left: 0; top: 0;'>
+  <div class="w3-container w3-button w3-round w3-white w3-opacity">
+    <a href="./"><i class="fa fa-home"></i></a>
+  </div>
+</div>
+
+
+<div class="sky">
+  <div id="cloud1" class="cloud"></div>
+  <div id="cloud2" class="cloud"></div>
+  <div id="cloud3" class="cloud"></div>
+  <div id="cloud4" class="cloud"></div>
+  <div id="cloud5" class="cloud"></div>
+  <div id="cloud6" class="cloud"></div>
+  <div id="cloud7" class="cloud"></div>
+</div>
+
+<audio autoplay loop style='display: none'>
+  <source src="/assets/Village-ambience.mp3" type="audio/mpeg">
+</audio>

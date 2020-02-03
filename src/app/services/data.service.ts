@@ -17,10 +17,10 @@ export class DataService
   aboutMe_short = 'I love analyzing problems, and designing solutions for them';
   aboutMe_long =
   [
-    "Assistant Teacher, Robotics Trainer, Graphic designer, and a developer willing to work on a variety of technical and creative projects and fields including video games, electronic newspapers, embedded systems, smart house appliance and robotics.",
+    "Assistant Teacher, Robotics Trainer, Graphic designer and a developer willing to work on a variety of technical and creative projects and fields including video games, electronic newspapers, embedded systems, smart house appliance and robotics.",
     "Interested in making people the best at what they can be, from art and programming to learning to cook.",
-    "My passion is the concept of NUI (Natural User Interface) and technology immersion in human life. ",
-    "Always looking for interesting problems to solve. "
+    "I'm always driven by the end user experience of customers. So, my passion is the futuristic concept of NUI (Natural User Interface) and technology immersion in human life. ",
+    "Routines? Sorry, not my thing. I'm always looking for new interesting problems to solve. "
   ];
 
   skills: skill[] =
