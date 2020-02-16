@@ -30,13 +30,13 @@ export class LightThemeComponent implements OnInit {
       element.classList.add("w3-bar");
       element.classList.add("w3-card");
       element.classList.add("w3-animate-top");
-      element.classList.add("w3-white");
+      element.classList.add("w3-light-grey");
     } 
     else 
     {
       element.classList.remove("w3-card");
       element.classList.remove("w3-animate-top");
-      element.classList.remove("w3-white");
+      element.classList.remove("w3-light-grey");
     }
   }
 

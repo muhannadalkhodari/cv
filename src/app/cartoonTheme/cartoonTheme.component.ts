@@ -30,6 +30,7 @@ export class CartoonThemeComponent implements OnInit
   slides: slide[] = [];
 
   fullHeight = 1113;
+  innerHeight = 0;
   wrapperWidth = 0;
 
   showModal = false;
@@ -64,7 +65,8 @@ export class CartoonThemeComponent implements OnInit
   {
     this.slides = [];
     this.wrapperWidth = 0;
-    let heightRatio = (window.innerHeight / this.fullHeight);
+    this.innerHeight = window.innerHeight;
+    let heightRatio = (this.innerHeight / this.fullHeight);
     document.documentElement.style.setProperty('--heightRatio' , heightRatio.toString());
     this.originalSlides.forEach((originalSlide, i) => 
     {

@@ -1,9 +1,9 @@
 <body class="w3-black">
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center blueGreyTransparentBackColor">
   <!-- Avatar image in top left corner -->
   <img [src]='data.contactSmallDarkPhotoUrl' style="width:100%" class="">
-  <a href="./" class="w3-bar-item w3-button w3-padding-large w3-black">
+  <a href="./" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
   </a>
@@ -26,7 +26,7 @@
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+<div class="w3-top w3-hide-large w3-hide-medium blueGreyTransparentBackColor" id="myNavbar" >
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="./" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
     <a href="./darkTheme#about" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
@@ -41,7 +41,7 @@
 <!-- Page Content -->
 <div class="" id="main">
 
-  <!-- Header/Home -->
+  <!-- Header -->
   <header class="w3-display-container w3-center w3-black" id="home">
     <img [src]='data.contactDarkPhotoUrl' class="w3-image w3-grayscale-max" alt="boy" width="100%">
     <div class="w3-display-topleft w3-container w3-padding-small">
@@ -51,13 +51,15 @@
   </header>
 
   <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-16" id="about">
 
-    <div class="w3-padding">
-      <h2 class="w3-text-light-grey">{{data.fullName}}</h2>
-      <hr style="width:200px" class="w3-opacity">
+    <div class=" w3-container w3-margin w3-round-large blueGreyTransparentBackColor">
+      <header class="w3-text-white w3-center">
+        <h2><b>{{data.fullName}}</b></h2>
+      </header>
+      
       <p>
-        <span *ngFor="let item of data.aboutMe_long">
+        <span class="w3-text-white" *ngFor="let item of data.aboutMe_long">
           {{item}}
           <br>
         </span>
@@ -65,17 +67,30 @@
     </div>
   
 
-    <div class="w3-padding">
-      <h3 class="w3-text-light-grey">My Skills</h3>
-      <div class="w3-wide" *ngFor="let skill of data.skills">
-        <p>
-          <!-- <span *ngFor="let icon of skill.icons">
-            <i [class]='icon'></i>
-          </span> -->
-          {{skill.name}}
-        </p>
-        <div class="w3-white">
-          <div class="w3-dark-grey" [style.width]="skill.value + '%'" style="height:28px;">
+    <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
+      <header class="w3-text-white w3-center">
+        <h2><b>My Skills</b></h2>
+      </header>
+      
+      <div class="w3-text-white" *ngFor="let skill of data.skills">
+        <div class="w3-row w3-margin">
+          <!-- <div class="w3-col s6">
+            <span class="w3-xlarge w3-margin-right" *ngFor="let icon of skill.icons">
+              <i [class]='icon'></i>
+            </span>
+            {{skill.name}}
+          </div>           -->
+        
+          <div class="w3-theme-l3">
+            <div class="w3-theme w3-padding" [style.width]="skill.value + '%'">
+              <span class="w3-xlarge w3-margin-right" *ngFor="let icon of skill.icons">
+                <i [class]='icon'></i>
+              </span>
+              <span class="w3-large w3-margin-right">
+                {{skill.name}}
+              </span>
+              
+            </div>
           </div>
         </div>
       </div>
@@ -91,19 +106,21 @@
   </div>
     
   <!-- Grid for work tables -->
-  <div class="w3-content w3-padding-64" id="work">
+  <div class="w3-content" id="work">
 
-    <div class="w3-padding">
-      <h3 class="w3-text-light-grey">My Work</h3>
+    <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
+      <header class="w3-text-white w3-center">
+        <h2><b>My Work</b></h2>
+      </header>
 
-      <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-row-padding">
 
         <div *ngFor="let experience of data.experiences" class="w3-col l6">
-          <div class="w3-card-4 w3-margin-bottom w3-dark-gray w3-text-white w3-center w3-opacity w3-hover-opacity-off">
-            <header class="w3-container w3-light-grey w3-padding">
-              <div class="">
+          <div class="w3-card-4 w3-round-large w3-margin-bottom w3-text-white w3-center w3-theme-d4">
+            <header class="w3-container w3-padding blueGreyTransparentBackColor">
+              <div class="w3-margin">
                 <a *ngFor="let place of experience.places" [href]="place.link">
-                  <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
+                  <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image w3-white w3-round-xlarge" style="height:100px; margin: 0 3px; padding: 1px;" [style.max-width]="100/experience.places.length + '%'">
                 </a> 
               </div>
             </header>
@@ -115,7 +132,7 @@
                 </p>
               </div>
             </div>
-            <footer class="w3-light-grey w3-padding-small">
+            <footer class="w3-padding-small blueGreyTransparentBackColor">
               <span *ngIf="!experience.to">Since {{experience.from}} </span>
               <span *ngIf="experience.to"> From {{experience.from}}  to {{experience.to}}</span>
             </footer>
@@ -131,29 +148,42 @@
   </div>
   
   <!-- Education -->
-  <div class="w3-content w3-padding-64" id="education">
-    <h3 class="w3-padding w3-text-light-grey">My Education</h3>
-    <div class="">
-      <div *ngFor="let study of data.studies" class="w3-cell-row w3-card w3-margin" style="width: auto !important;">
-  
-        <div class="w3-cell w3-cell-middle w3-padding" style="width: 20.5%; background-color: white;">
-          <a *ngFor="let place of study.places" [href]="place.link">
-            <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image" style="max-height: 110px; max-width: 110px;">
-          </a>
-        </div>
+  <div class="w3-content w3-padding-16" id="education">
     
-        <div class="w3-cell w3-cell-middle">
-          <div class="w3-margin-left w3-padding-16 w3-large w3-container">
-    
-            <span class="w3-xlarge w3-margin-top"><b>{{study.title}}</b></span><br>
-            <span class="w3-large">{{study.description}}</span><br>
-            <span class="w3-large" *ngIf="!study.to">Since {{study.from}} </span>
-            <span class="w3-large" *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
-            
+    <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
+      <header class="w3-text-white w3-center">
+        <h2><b>My Education</b></h2>
+      </header>
+
+      <div class="w3-row-padding">
+
+        <div *ngFor="let study of data.studies" class="w3-col l6">
+          <div class="w3-card-4 w3-round-large w3-margin-bottom w3-text-white w3-center w3-theme-d4">
+            <header class="w3-container w3-padding blueGreyTransparentBackColor">
+              <div class="w3-margin">
+                <a *ngFor="let place of study.places" [href]="place.link">
+                  <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image w3-white w3-round-xlarge" style="height:100px; margin: 0 3px; padding: 5px;"  [style.max-width]="100/study.places.length + '%'">
+                </a> 
+              </div>
+            </header>
+            <div class="w3-container">
+              <h4><b>{{study.title}}</b></h4>
+              <div>
+                <p>
+                  {{study.description}}
+                </p>
+              </div>
+            </div>
+            <footer class="w3-padding-small blueGreyTransparentBackColor">
+              <span *ngIf="!study.to">Since {{study.from}} </span>
+              <span *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
+            </footer>
           </div>
         </div>
-    
+  
+      <!-- End Grid of work tables -->
       </div>
+
     </div>
     
   </div>
@@ -162,23 +192,37 @@
   
 
   <!-- Contact Section -->
-  <div class="w3-content w3-justify w3-padding-64 w3-text-grey" id="contact">
-    <div class="w3-padding">
-      <h2 class="w3-text-light-grey">Contact Me</h2>
-      <hr style="width:200px" class="w3-opacity">
+  <div class="w3-content w3-justify w3-padding-16 w3-text-grey" id="contact">
+    <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
+      <header class="w3-text-white w3-center">
+        <h2><b>Contact Me</b></h2>
+      </header>
 
-      <div class="w3-section">
-
-        <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-xlarge">
-          <span class="w3-margin-right">
+      <div class="w3-col l3 m2 s1 w3-margin-top w3-margin-bottom">
+        <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-large">
+          <span class="w3-right">
             <i [class]="contactDetail.icon"></i>
           </span>
+        </div> 
+      </div>
+
+      <div class="w3-col l6 m8 s10 w3-margin-top w3-margin-bottom w3-center">
+        <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-large">
           <span>
             {{contactDetail.detail}}<br>
           </span>
         </div>
+      </div>
 
-      </div><br>
+      <div class="w3-col l3 m2 s1 w3-margin-top w3-margin-bottom">
+        <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-large">
+          <span class="w3-left">
+            <i [class]="contactDetail.icon"></i>
+          </span>
+        </div> 
+      </div>
+      
+      <br>
     </div>
     
   <!-- End Contact Section -->

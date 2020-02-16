@@ -32,7 +32,7 @@
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
+  <h3 class="w3-center">About Me</h3>
   <p class="w3-center"><em>{{data.aboutMe_short}}</em></p>
   <p>
     <span *ngFor="let item of data.aboutMe_long">
@@ -44,18 +44,19 @@
 
   <hr>
 
-  <p class="w3-large w3-center w3-padding-16">
+  <p class="w3-xlarge w3-center w3-padding-16">
     I'm really good at:
   </p>
   
-  <div class="w3-wide" *ngFor="let skill of data.skills">
-    <p>
+  <div class="w3-col l6 w3-padding" *ngFor="let skill of data.skills">
+    
+    <div class="w3-margin-bottom">
       <span *ngFor="let icon of skill.icons">
-        <i [class]='icon'></i>
+        <i [class]='icon'></i>&nbsp;
       </span>
       {{skill.name}}
-    </p>
-    <div class="w3-light-grey">
+    </div>
+    <div class="w3-light-grey w3-margin-bottom">
       <div class="w3-container w3-padding-small w3-dark-grey w3-center" [style.width]="skill.value + '%'">
         {{skill.value}}%
       </div>
@@ -67,7 +68,7 @@
 <!-- Second Parallax Image with Work Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">Work</span>
+    <span class="w3-xxlarge w3-text-white"><b>Work</b></span>
   </div>
 </div>
 
@@ -80,20 +81,19 @@
   <div class="w3-row-padding w3-center">
 
     <div *ngFor="let experience of data.experiences" class="w3-col l6">
-      <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-light-grey">
-          <h3>{{experience.title}}</h3>
+      <div class="w3-card-4 w3-margin-bottom w3-light-grey">
+        <header class="w3-container w3-dark-grey">
+          <h4>{{experience.title}}</h4>
         </header>
         <div class="w3-container">
           <div class="w3-margin">
             <a *ngFor="let place of experience.places" [href]="place.link">
               <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
-            </a> 
+            </a>  
           </div>
           <div>
             <p>
               {{experience.description}}
-            </p>
           </div>
         </div>
         <footer class="w3-dark-grey w3-padding-small">
@@ -110,7 +110,7 @@
 <!-- Third Parallax Image with Education Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">Education</span>
+    <span class="w3-xxlarge w3-text-white"><b>Education</b></span>
   </div>
 </div>
 
@@ -123,8 +123,8 @@
   <div class="w3-row-padding w3-center">
 
     <div *ngFor="let study of data.studies" class="w3-col l6">
-      <div class="w3-card-4 w3-margin-bottom">
-        <header class="w3-container w3-light-grey">
+      <div class="w3-card-4 w3-margin-bottom w3-light-grey">
+        <header class="w3-container w3-dark-grey">
           <h3>{{study.title}}</h3>
         </header>
         <div class="w3-container">
@@ -154,14 +154,14 @@
 <!-- Fourth Parallax Image with Contact Text -->
 <div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">Contact Me</span>
+    <span class="w3-xxlarge w3-text-white"><b>Contact Me</b></span>
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-32" id="contact">
   <div class="">
-    <div class="w3-cell-row w3-card w3-margin" style="width: auto !important;">
+    <div class="w3-cell-row w3-card w3-light-grey w3-margin" style="width: auto !important;">
 
       <div class="w3-cell w3-cell-middle w3-hide-small" style="width: 20.5%;">
         <img [src]="data.contactPhotoUrl" class="w3-image">

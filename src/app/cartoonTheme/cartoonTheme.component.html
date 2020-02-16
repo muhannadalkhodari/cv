@@ -3,6 +3,10 @@
        [style.width]="wrapperWidth + 'px'"
   >
 
+    <div [style.width]="wrapperWidth + 'px'" [style.height]='innerHeight' [style.background]="'url(assets/Muhannadonia.png)'" style="position: absolute; z-index: -1000;">
+
+    </div>
+
     <div *ngFor="let slide of slides, let i=index" 
         class="slide"
         [style.width]=" slide.width +'px'"

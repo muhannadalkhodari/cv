@@ -91,7 +91,7 @@ export class DataService
         {
           name: "Syriatel",
           link: "http://www.syriatel.sy",
-          imageUrl: "http://www.syriatel.sy/sites/all/themes/syriatel/logo.png",
+          imageUrl: "assets/syriatel_logo.png",
           circle: false
         }
       ]
@@ -106,19 +106,19 @@ export class DataService
         {
           name: "RoboTech Club",
           link: "https://www.facebook.com/HmkRoboTech",
-          imageUrl: "https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/15032766_1011655165629244_8163403390277347051_n.jpg?_nc_cat=104&_nc_ohc=XAdpZJbIDyYAX_Vsi74&_nc_ht=scontent-mrs2-1.xx&oh=5eaf7cc59d13992db7803e1ba6459cb4&oe=5ED25322",
+          imageUrl: "assets/RoboTechClub_logo.jpg",
           circle: true
         },
         {
           name: "USWA Academy",
           link: "https://www.facebook.com/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D9%91%D8%A9-%D8%A3%D8%B3%D9%88%D8%A9-USWA-Academy-1063589860322163/",
-          imageUrl: "https://scontent-mrs2-2.xx.fbcdn.net/v/t1.0-9/44272_1258967160784431_190970510413239793_n.jpg?_nc_cat=106&_nc_ohc=B4Q6uptaDc4AX_1L1Rl&_nc_ht=scontent-mrs2-2.xx&oh=c6d382fec3758264c0c05600f6a9d0cd&oe=5ECF6FB4",
+          imageUrl: "assets/USWA_logo.jpg",
           circle: true
         },
         {
           name: "Al-Abjadiya Institute for Training",
           link: "https://www.facebook.com/aicgrouptraining",
-          imageUrl: "https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/74526543_354723598642018_4600192668763422720_n.jpg?_nc_cat=103&_nc_ohc=aVFVdhfjavIAX85N9SU&_nc_ht=scontent-mrs2-1.xx&oh=0373dd6b52f8a2cc6b2236d110d45915&oe=5ED8BCBB",
+          imageUrl: "assets/aic_logo.jpg",
           circle: true
         }
       ]
@@ -133,13 +133,13 @@ export class DataService
         {
           name: "Facts Mine",
           link: "https://mangam.info/",
-          imageUrl: "https://mangam.info/wp-content/uploads/2019/01/identity.png",
+          imageUrl: "assets/mangam_logo.png",
           circle: false
         },
         { 
           name: "Robotic Arena",
           link: "https://www.roboticarena.info/",
-          imageUrl: "https://scontent-mrs2-1.xx.fbcdn.net/v/t31.0-8/p960x960/16113320_239801916462280_3649860450475779002_o.png?_nc_cat=103&_nc_ohc=zYLP2GV-Qq0AX9QGcVQ&_nc_ht=scontent-mrs2-1.xx&oh=eda506e39873a73747d24230d047c5ab&oe=5E9A8DFF",
+          imageUrl: "assets/RoboticArena_logo.png",
           circle: true
         }
       ]
@@ -154,7 +154,7 @@ export class DataService
         {
           name: "Damascus University",
           link: "http://www.damascusuniversity.edu.sy",
-          imageUrl: "http://www.damascusuniversity.edu.sy/FCKBIH/image/Images%201/q.jpg",
+          imageUrl: "assets/DamascusUniversity_logo.jpg",
           circle: true
         }
       ]
@@ -173,7 +173,7 @@ export class DataService
         {
           name: "Damascus University",
           link: "http://www.damascusuniversity.edu.sy",
-          imageUrl: "http://www.damascusuniversity.edu.sy/FCKBIH/image/Images%201/q.jpg",
+          imageUrl: "assets/DamascusUniversity_logo.jpg",
           circle: true
         }
       ]
@@ -188,7 +188,7 @@ export class DataService
         {
           name: "Syrian Virtual University",
           link: "https://svuonline.org/ar",
-          imageUrl: "https://svuonline.org/sites/all/themes/atsvu/css/images/logo.png",
+          imageUrl: "assets/SVU_logo.png",
           circle: false
         }
       ]
@@ -199,22 +199,23 @@ export class DataService
   [
     {
       detail: "Damascus, Syria",
-      icon:   "fa fa-map-marker fa-fw"
+      icon:   "fa fa-map-marker fa-fw w3-text-red"
     },
     {
       detail: "+963 931874562",
-      icon:   "fa fa-phone fa-fw"
+      icon:   "fa fa-phone fa-fw w3-text-green"
     },
     {
       detail: "muhannad.al.khodari@outlook.com",
-      icon:   "fa fa-envelope fa-fw"
+      icon:   "fa fa-envelope fa-fw w3-text-blue"
     }
 
   ];
 
-  contactPhotoUrl: string = "https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/s960x960/79756462_2595092047194199_4987843922840518656_o.jpg?_nc_cat=105&_nc_ohc=snwz_x_InB4AX94BlZL&_nc_ht=scontent-mrs2-1.xx&_nc_tp=1002&oh=b99d7551456027f6a33325b9f0e4b78c&oe=5ED73532";
+  contactPhotoUrl: string = "assets/me_brown.jpg";
+  contactRedPhotoUrl: string = "assets/me_red.jpeg";
 
-  contactDarkPhotoUrl: string = "https://scontent-mrs2-2.xx.fbcdn.net/v/t1.0-0/p180x540/80213518_2603822486321155_8541400009856253952_o.jpg?_nc_cat=106&_nc_ohc=f4Q_l7WhcP8AX8St3mJ&_nc_ht=scontent-mrs2-2.xx&_nc_tp=1002&oh=b0d1d4a654b81d6372568f0cce877b02&oe=5E90100F";
+  contactDarkPhotoUrl: string = "assets/me_header.jpg";
   contactSmallDarkPhotoUrl: string = "assets/black-me.jpeg";
 
 }
