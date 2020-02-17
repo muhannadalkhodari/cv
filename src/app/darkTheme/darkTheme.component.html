@@ -73,20 +73,20 @@
       </header>
       
       <div class="w3-text-white" *ngFor="let skill of data.skills">
-        <div class="w3-row w3-margin">
-          <!-- <div class="w3-col s6">
-            <span class="w3-xlarge w3-margin-right" *ngFor="let icon of skill.icons">
+        <div class="w3-margin">
+          <div class="w3-row w3-hide-large">
+            <span class="w3-large w3-margin-right" *ngFor="let icon of skill.icons">
               <i [class]='icon'></i>
             </span>
             {{skill.name}}
-          </div>           -->
+          </div>          
         
-          <div class="w3-theme-l3">
+          <div class="w3-row w3-theme-l3">
             <div class="w3-theme w3-padding" [style.width]="skill.value + '%'">
-              <span class="w3-xlarge w3-margin-right" *ngFor="let icon of skill.icons">
+              <span class="w3-large w3-hide-medium w3-hide-small w3-margin-right" *ngFor="let icon of skill.icons">
                 <i [class]='icon'></i>
               </span>
-              <span class="w3-large w3-margin-right">
+              <span class="w3-large w3-hide-medium w3-hide-small w3-margin-right">
                 {{skill.name}}
               </span>
               

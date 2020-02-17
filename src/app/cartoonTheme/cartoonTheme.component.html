@@ -1,9 +1,10 @@
 <div class="outer-wrapper">
   <div class="wrapper"
        [style.width]="wrapperWidth + 'px'"
+       style="overflow-x: hidden;"
   >
 
-    <div [style.width]="wrapperWidth + 'px'" [style.height]='innerHeight' [style.background]="'url(assets/Muhannadonia.png)'" style="position: absolute; z-index: -1000;">
+    <div [style.width]="wrapperWidth + 'px'" [style.height]='innerHeight + "px"' [style.background]="'url(assets/Muhannadonia.png)'" [style.background-size]="'contain'" style="position: absolute; z-index: -1000;">
 
     </div>
 
@@ -32,6 +33,10 @@
       
     </div>
 
+    <div class="sky" style="z-index: 10;">
+      <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" [id]="'cloud' + i" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
+    </div>
+
   </div>
 </div>
 
@@ -41,25 +46,32 @@
        [ngClass]="{'w3-light-gray': selectedMarker == 'Credits'}"
   >
     <div class="w3-container">
-      <span (click)="showModal = false; selectedExperience= null;"
-             class="w3-button w3-display-topright"
-      >
-        &times;
-      </span>
-      <div class="w3-row-padding w3-center">
 
-        <div class="w3-row">
+      <div class="w3-row-padding">
+        <span (click)="showModal = false; selectedExperience= null;"
+              class="w3-button w3-display-topright"
+        >
+          &times;
+        </span>
+      </div>
+      
+      <div class="w3-row-padding w3-margin w3-center">
+
+        <div class="w3-col l5 m12 s12">
           <div class="">
             <img [src]="'assets/' + selectedMarker + '.png'"
-               style="width: 30%;"
+               style="max-width: 100%; max-height: 50vh;"
             >
           </div>
         </div>
 
-        <div class="w3-row">
+        <div class="w3-col l7 m12 s12">
 
           <div *ngIf="selectedMarker == 'Welcome'" class="w3-serif w3-margin-top">
             <div class="w3-xxlarge">
+              <div class="w3-hide-medium w3-hide-small">
+                <br>
+              </div>
               <div class="w3-padding-small">
                 <i>Welcome to <b>Muhannadonia</b>...</i>
               </div>
@@ -76,13 +88,13 @@
           </div>
 
           <div *ngIf="selectedMarker == 'Skills'" class="w3-row-padding w3-margin">
-            <div class="w3-col l6 w3-left-align w3-small" *ngFor="let skill of data.skills">
-              <p>
+            <div class="w3-row w3-margin-bottom w3-left-align w3-small" *ngFor="let skill of data.skills">
+              <h6>
                 <span *ngFor="let icon of skill.icons">
                   <i [class]='icon'></i>
                 </span>
                 {{skill.name}}
-              </p>
+              </h6>
               <div class="w3-light-grey w3-small">
                 <div class="w3-container w3-red w3-center" [style.width]="skill.value + '%'">
                   {{skill.value}}%
@@ -92,29 +104,44 @@
           </div>
 
           <div *ngIf="selectedMarker == 'Education'" class="w3-row-padding w3-margin-top">
-            <div *ngFor="let study of data.studies" class="w3-col l6 m6">
-              <div class="w3-card-4 w3-margin-bottom w3-padding-small">
-                <div class="w3-row">
-                  <div class="w3-col l4 w3-padding">
-                    <a *ngFor="let place of study.places" [href]="place.link">
-                      <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:80px;">
-                    </a> 
-                  </div>
-                  <div class="w3-col l8">
-                    <div class="w3-row w3-margin-top">
-                      <b>{{study.title}}</b>
-                    </div>
+            
+            <div class="w3-card-4 w3-brown w3-padding">
+              <div class="w3-container w3-orange w3-padding-32 noise w3-row-padding">
+
+                <div *ngFor="let study of data.studies" class="w3-col l6">
+                  <div class="w3-card-4 w3-pale-yellow w3-margin-bottom w3-padding" style="transform: rotate(3deg);">
+
                     <div class="w3-row">
-                      {{study.description}}
-                    </div>
-                    <div class="w3-row">
-                      <span *ngIf="!study.to">Since {{study.from}} </span>
-                      <span *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
+
+                      <div class="w3-row w3-center w3-margin-bottom">
+                        <i class="fa fa-circle w3-text-red w3-shadow w3-xlarge" aria-hidden="true"></i>
+                      </div>
+
+                      <div class="w3-col l12 m4 s12 w3-margin-bottom">
+                        <a *ngFor="let place of study.places" [href]="place.link">
+                          <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image w3-padding w3-white w3-border" style="max-height: 100px; width: auto;">
+                        </a> 
+                      </div>
+                      
+                      <div class="w3-col l12 m8 s12 ">
+                        <div class="w3-row">
+                          <b>{{study.title}}</b>
+                        </div>
+                        <br>
+                        <div class="w3-row">
+                          {{study.description}}
+                        </div>
+                        <div class="w3-row">
+                          <span *ngIf="!study.to">Since {{study.from}} </span>
+                          <span *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            
           </div>
 
           <div *ngIf="selectedMarker == 'Work'" class="">
@@ -214,15 +241,7 @@
 </div>
 
 
-<div class="sky">
-  <div id="cloud1" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud2" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud3" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud4" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud5" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud6" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-  <div id="cloud7" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
-</div>
+
 
 <audio autoplay loop style='display: none'>
   <source src="assets/Village-ambience.mp3" type="audio/mpeg">
