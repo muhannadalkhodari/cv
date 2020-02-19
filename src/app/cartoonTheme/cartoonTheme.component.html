@@ -55,20 +55,20 @@
 
 <!-- The Modal -->
 <div class="w3-modal" *ngIf="showModal" style="padding-top: 0; display: block;">
-  <div class="w3-modal-content" style="width: 80%;" [style.top]="modalTop + '%'"
-       [ngClass]="{'w3-light-gray': selectedMarker == 'Credits'}"
+  <div class="w3-modal-content" style="width: 90%;" [style.top]="modalTop + '%'"
+       [ngClass]="{'w3-light-grey': selectedMarker == 'Credits'}"
   >
     <div class="w3-container">
 
       <div class="w3-row-padding">
         <span (click)="showModal = false; selectedExperience= null;"
-              class="w3-button w3-display-topright"
+              class="w3-button w3-display-topright w3-hover-opacity"
         >
           &times;
         </span>
       </div>
       
-      <div class="w3-row-padding w3-margin w3-center">
+      <div class="w3-row-padding w3-margin-bottom w3-center">
 
         <div *ngIf="selectedMarker != 'Credits'" class="">
           <div class="w3-col l5 w3-hide-medium w3-hide-small">
@@ -137,7 +137,10 @@
 
           <div *ngIf="selectedMarker == 'Education'" class="w3-row-padding w3-margin-top">
             
-            <div class="w3-card-4 w3-brown w3-padding">
+            <div class="w3-hide-medium w3-hide-small">
+              <br>
+            </div>
+            <div class="w3-card-4 w3-margin-top w3-brown w3-padding">
               <div class="w3-container w3-orange w3-padding-32 noise w3-row-padding">
 
                 <div *ngFor="let study of data.studies" class="w3-col l6">
@@ -179,7 +182,7 @@
           <div *ngIf="selectedMarker == 'Work'" class="w3-cell-row" style="min-height: 400px;">
 
             <div class='w3-cell w3-cell-middle'>
-              <span class=""> <b>Hint:</b> click on the card and the arrows.</span>
+              <!-- <span class=""> <b>Hint:</b> click on the card and the arrows.</span> -->
 
               <div class="w3-margin-top">
                 <div class="w3-cell-row">
@@ -193,7 +196,7 @@
                   
                   <div class="w3-cell w3-cell-middle w3-container w3-center flip-card" style="width: 80%;">
                     
-                    <div class="w3-card-4 w3-light-gray flip-card-inner" 
+                    <div class="w3-card-4 w3-light-grey flip-card-inner" 
                         [class.w3-zoom-in]="zoomIn" 
                         [class.w3-zoom-out]="zoomOut" 
                         [class.w3-flip]="flipCard180"  
@@ -203,15 +206,17 @@
 
                         <div class="w3-cell-row" style="width: 100%;">
 
-                          <div class="w3-cell w3-cell-middle">
+                          <div class="w3-cell w3-cell-middle" [class.w3-hide]="flipCard180">
                             <!-- load all images for better seen performance -->
                             <img *ngFor="let experience of data.experiences" 
                                 [src]="'assets/' + data.experiences[selectedExperienceIndex].title + '.png'" 
                                 [title]="data.experiences[selectedExperienceIndex].title" 
                                 [alt]="data.experiences[selectedExperienceIndex].title" 
-                                [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience || flipCard180"
+                                [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience"
                                 style="max-height: 50vh; max-width: 100%;"
                             >
+                            <h5><b>{{data.experiences[selectedExperienceIndex].title}}</b></h5>
+                            <i class="material-icons">touch_app</i>
                           </div>
                         </div>
                         
@@ -267,19 +272,29 @@
             
           </div>
 
-          <div *ngIf="selectedMarker == 'Contact'" class="w3-row-padding">
-            <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black w3-margin w3-center" style="overflow-wrap: break-word;">
-              <span class="w3-margin w3-xxlarge">
-                <i [class]="contactDetail.icon"></i>
-              </span>
-              <br>
-              <span>
-                <a [href]="contactDetail.link">
-                  <b>{{contactDetail.detail}}</b>
-                </a> 
-              </span>
-              <br>
+          <div *ngIf="selectedMarker == 'Contact'" class="">
+            <div class="">
+              <div class="w3-row">
+                <br>
+                <div *ngFor="let contactDetail of data.contactDetails" class="w3-col l6 m6 s12">
+                  <div class="w3-margin w3-padding-small w3-card-4 w3-light-grey w3-text-black w3-center"  style="overflow-wrap: break-word; height: 120px;">
+                    <span class="w3-margin w3-xxlarge">
+                      <i [class]="contactDetail.icon"></i>
+                    </span>
+                    <br>
+                    <span>
+                      <a [href]="contactDetail.link">
+                        <b>{{contactDetail.detail}}</b>
+                      </a> 
+                    </span>
+                    <br>
+                  </div>
+                  
+                </div>
+              </div>
+              
             </div>
+            
           </div>
 
           <div *ngIf="selectedMarker == 'Credits'" class="w3-row-padding w3-margin-top">

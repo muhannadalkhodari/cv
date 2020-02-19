@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DigitalClockComponent } from "../digitalClock/digitalClock.component";
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,14 @@ import { DigitalClockComponent } from "../digitalClock/digitalClock.component";
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor
+  (
+    public data: DataService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
+    
   }
 
 }

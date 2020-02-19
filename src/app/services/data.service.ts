@@ -10,6 +10,34 @@ export class DataService
   constructor() 
   { }
 
+  themes: theme[] = 
+  [
+    {
+      name: "Stylish Light",
+      link: "lightTheme",
+      icon: "wb_sunny",
+      color: "grey"
+    },
+    {
+      name: "Minimalistic Dark",
+      link: "darkTheme",
+      icon: "filter_b_and_w",
+      color: "dark-gray"
+    },
+    {
+      name: "Classic Colored",
+      link: "colorsTheme",
+      icon: "palette",
+      color: "orange"
+    },
+    {
+      name: "Cartoonish Isometric",
+      link: "cartoonsTheme",
+      icon: "location_city",
+      color: "light-green"
+    }
+  ];
+
   firstName = 'Muhannad';
   lastName = 'Al-Khodari';
   fullName = this.firstName + ' ' + this.lastName;
@@ -257,4 +285,12 @@ class contactDetail
   detail: string;
   link: string;
   icon:   string;
+}
+
+class theme
+{
+  name:   string;
+  link:   string;
+  icon:   string;
+  color:  string;
 }
