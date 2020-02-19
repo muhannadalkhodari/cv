@@ -4,7 +4,12 @@
        style="overflow-x: hidden;"
   >
 
-    <div [style.width]="wrapperWidth + 'px'" [style.height]='innerHeight + "px"' [style.background]="'url(assets/Muhannadonia.png)'" [style.background-size]="'contain'" style="position: absolute; z-index: -1000;">
+    <div [style.width]="wrapperWidth + 'px'" 
+          [style.height]='innerHeight + "px"' 
+          [style.background]="'url(assets/Muhannadonia.png)'" 
+          [style.background-size]="'contain'" 
+          style="position: absolute; z-index: -1000;"
+    >
 
     </div>
 
@@ -16,16 +21,24 @@
     >
       <div style="position: relative;"
            [style.margin-top]="slide.markerMarginTop + 'px'"
-           [style.margin-left]="slide.markerMarginLeft + 'px'"    
+           [style.margin-left]="slide.markerMarginLeft + 'px'" 
+           class="marker"   
       >
-        <div class="marker" style="cursor: pointer; width: 50px; text-shadow:1px 1px 0 #444"
+        <div class="" style="cursor: pointer; width: 50px;"
              (click)="showModalSmoothly(slide.marker)"
              [title] = 'slide.marker'
         >
-          <i class="fa fa-map-marker w3-text-red w3-jumbo" aria-hidden="true"></i>
-          <span class="w3-xlarge w3-text-red w3-white w3-opacity" style="position: relative; left: -25px">
-            <br><b>{{slide.marker}}</b>
-          </span>
+          <div class="w3-padding-small w3-xlarge w3-red w3-text-white w3-round-large w3-box-shadow" style="position: fixed; z-index: 0;"
+                [style.margin-left]="-slide.markerOffset + 'px'"
+          >
+            <b>{{slide.marker}}</b>
+          </div>
+          <i class="fa fa-map-marker w3-text-red w3-jumbo w3-text-shadow" aria-hidden="true" style="position: fixed; z-index: 1;"></i>
+          <div class="w3-padding-small w3-xlarge w3-red w3-text-white w3-round-large" style="position: fixed; z-index: 2; text-shadow:1px 1px 0 #444"
+                [style.margin-left]="-slide.markerOffset + 'px'"
+          >
+            <b>{{slide.marker}}</b>
+          </div>
         </div>
         <div></div>
         
@@ -57,43 +70,62 @@
       
       <div class="w3-row-padding w3-margin w3-center">
 
-        <div class="w3-col l5 m12 s12">
-          <div class="">
+        <div *ngIf="selectedMarker != 'Credits'" class="">
+          <div class="w3-col l5 w3-hide-medium w3-hide-small">
             <img [src]="'assets/' + selectedMarker + '.png'"
                style="max-width: 100%; max-height: 50vh;"
             >
           </div>
         </div>
+        <div *ngIf="selectedMarker != 'Credits'" class="">
+          <div class="w3-col m12 s12 w3-hide-large">
+            <img [src]="'assets/' + selectedMarker + '.png'"
+               style="max-width: 100%; max-height: 35vh;"
+            >
+          </div>
+        </div>
 
-        <div class="w3-col l7 m12 s12">
+        <div class="w3-col m12 s12" [class.l7]="selectedMarker != 'Credits'">
 
           <div *ngIf="selectedMarker == 'Welcome'" class="w3-serif w3-margin-top">
-            <div class="w3-xxlarge">
-              <div class="w3-hide-medium w3-hide-small">
-                <br>
+
+            <div class="w3-full-center">
+
+              <div class="">
+                <!-- <div class="w3-hide-medium w3-hide-small">
+                  <br>
+                </div> -->
+                <div class="w3-row w3-padding-small w3-xxlarge">
+                  <i>Welcome to <b>Muhannadonia</b>...</i>
+                </div>
+                <div class=" w3-row w3-padding-small w3-xxlarge">
+                  <i>Feel free to explore my town..</i>
+                </div>
+                <div class="w3-row w3-margin w3-xlarge">
+                  <i>
+                    <b>Hint:</b> Click on the red markers 
+                    <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i>
+                  </i>
+                </div>
               </div>
-              <div class="w3-padding-small">
-                <i>Welcome to <b>Muhannadonia</b>...</i>
-              </div>
-              <div class="w3-padding-small">
-                <i>Feel free to explore my town..</i>
-              </div>
+        
             </div>
-            <div class="w3-xlarge">
-              <p><i>
-                <b>Hint:</b> Click on the red markers 
-                <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i>
-              </i></p>
-            </div>
+            
           </div>
 
           <div *ngIf="selectedMarker == 'Skills'" class="w3-row-padding w3-margin">
-            <div class="w3-row w3-margin-bottom w3-left-align w3-small" *ngFor="let skill of data.skills">
+
+            <div class="w3-col l12 m6 s12 w3-margin-bottom w3-left-align w3-small" *ngFor="let skill of data.skills">
               <h6>
-                <span *ngFor="let icon of skill.icons">
+                <span class="w3-hide-medium" *ngFor="let icon of skill.icons">
                   <i [class]='icon'></i>
                 </span>
-                {{skill.name}}
+                <span class="w3-hide-medium w3-hide-small">
+                  {{skill.name}}
+                </span>
+                <span class="w3-hide-large">
+                  {{skill.name.split('(')[0]}}
+                </span>
               </h6>
               <div class="w3-light-grey w3-small">
                 <div class="w3-container w3-red w3-center" [style.width]="skill.value + '%'">
@@ -109,12 +141,12 @@
               <div class="w3-container w3-orange w3-padding-32 noise w3-row-padding">
 
                 <div *ngFor="let study of data.studies" class="w3-col l6">
-                  <div class="w3-card-4 w3-pale-yellow w3-margin-bottom w3-padding" style="transform: rotate(3deg);">
+                  <div class="w3-card-4 paper-shadow w3-pale-yellow w3-margin-bottom w3-padding" style="transform: rotate(3deg);">
 
                     <div class="w3-row">
 
                       <div class="w3-row w3-center w3-margin-bottom">
-                        <i class="fa fa-circle w3-text-red w3-shadow w3-xlarge" aria-hidden="true"></i>
+                        <i class="fa fa-circle w3-text-red w3-text-shadow w3-xlarge" aria-hidden="true"></i>
                       </div>
 
                       <div class="w3-col l12 m4 s12 w3-margin-bottom">
@@ -144,53 +176,107 @@
             
           </div>
 
-          <div *ngIf="selectedMarker == 'Work'" class="">
-            <div class='w3-row-padding'>
-              <div *ngFor="let experience of data.experiences" class="w3-margin">
-                <div class="w3-col s3 w3-container">
-                  <a href="javascript:void(0)" class="w3-hover-opacity" (click)="selectedExperience = null; selectedExperience = experience;">
-                    <img [src]="'assets/' + experience.title + '.png'" [alt]="experience.title" class="w3-margin-bottom"  style="width:100%">
-                  </a>
+          <div *ngIf="selectedMarker == 'Work'" class="w3-cell-row" style="min-height: 400px;">
+
+            <div class='w3-cell w3-cell-middle'>
+              <span class=""> <b>Hint:</b> click on the card and the arrows.</span>
+
+              <div class="w3-margin-top">
+                <div class="w3-cell-row">
+
+                  <div class="w3-cell w3-cell-middle" style="width: 10%;">
+                    <!-- Previous button -->
+                    <div class="">
+                      <button class="w3-button prev" [disabled]='selectedExperienceIndex == 0 || disableButtons' (click)="prev()">&#10094;</button>
+                    </div>
+                  </div>
+                  
+                  <div class="w3-cell w3-cell-middle w3-container w3-center flip-card" style="width: 80%;">
+                    
+                    <div class="w3-card-4 w3-light-gray flip-card-inner" 
+                        [class.w3-zoom-in]="zoomIn" 
+                        [class.w3-zoom-out]="zoomOut" 
+                        [class.w3-flip]="flipCard180"  
+                        (click)='flipCard180 = !flipCard180'>
+
+                      <div class="flip-card-front" style="overflow: hidden;">
+
+                        <div class="w3-cell-row" style="width: 100%;">
+
+                          <div class="w3-cell w3-cell-middle">
+                            <!-- load all images for better seen performance -->
+                            <img *ngFor="let experience of data.experiences" 
+                                [src]="'assets/' + data.experiences[selectedExperienceIndex].title + '.png'" 
+                                [title]="data.experiences[selectedExperienceIndex].title" 
+                                [alt]="data.experiences[selectedExperienceIndex].title" 
+                                [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience || flipCard180"
+                                style="max-height: 50vh; max-width: 100%;"
+                            >
+                          </div>
+                        </div>
+                        
+                        
+                      </div>
+
+                      <div class="flip-card-back">
+                        <div [ngClass]="{'w3-hide': !flipCard180}" class="w3-cell-row">
+                          <div class="w3-cell w3-cell-middle">
+                            <div class="w3-row">
+                              <a *ngFor="let place of data.experiences[selectedExperienceIndex].places" [href]="place.link">
+                                <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" class="w3-margin-top" style="max-height:80px;">
+                              </a> 
+                            </div>
+                            <div class="w3-row">
+                              <div class="w3-margin w3-center">
+                                <h3 class="w3-margin-bottom">{{data.experiences[selectedExperienceIndex].title}}</h3>
+                                <!-- @ 
+                                <span *ngFor="let place of data.experiences[selectedExperienceIndex].places, let places_index = index">
+                                  <a [href]="place.link">{{place.name}}</a>
+                                  <span *ngIf="places_index!=(data.experiences[selectedExperienceIndex].places.length-1)">, </span>
+                                  <span *ngIf="places_index==(data.experiences[selectedExperienceIndex].places.length-1)">. </span>
+                                </span> -->
+                                
+                                {{data.experiences[selectedExperienceIndex].description}}
+                                <br><br>
+                                <b>
+                                  <span *ngIf="!data.experiences[selectedExperienceIndex].to">Since {{data.experiences[selectedExperienceIndex].from}} </span>
+                                  <span *ngIf="data.experiences[selectedExperienceIndex].to"> From {{data.experiences[selectedExperienceIndex].from}}  to {{data.experiences[selectedExperienceIndex].to}}</span>
+                                </b>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                    
+                  </div>
+  
+                  <div class="w3-cell w3-cell-middle" style="width: 10%;">
+                    <!-- Next button -->
+                    <div class="">
+                      <button class="w3-button next" [disabled]='selectedExperienceIndex == data.experiences.length-1 || disableButtons' (click)="next()">&#10095;</button>
+                    </div>
+                  </div>
+
                 </div>
               </div>
+
             </div>
-            <div class="w3-card-4 w3-row w3-margin-bottom w3-animate-zoom" *ngIf="selectedExperience != null">
-              <div class="w3-col l4">
-                <a *ngFor="let place of selectedExperience.places" [href]="place.link">
-                  <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" class="w3-margin-top" style="height:100px;">
-                </a> 
-              </div>
-              <div class="w3-col l8">
-                <div class="w3-margin w3-left-align">
-                  <h3>{{selectedExperience.title}}</h3>
-                  @ 
-                  <span *ngFor="let place of selectedExperience.places, let places_index = index">
-                    <a [href]="place.link">{{place.name}}</a>
-                    <span *ngIf="places_index!=(selectedExperience.places.length-1)">, </span>
-                    <span *ngIf="places_index==(selectedExperience.places.length-1)">. </span>
-                  </span>
-                  <br>
-                  {{selectedExperience.description}}
-                  <br>
-                  <b>
-                    <span *ngIf="!selectedExperience.to">Since {{selectedExperience.from}} </span>
-                    <span *ngIf="selectedExperience.to"> From {{selectedExperience.from}}  to {{selectedExperience.to}}</span>
-                  </b>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
-          <div *ngIf="selectedMarker == 'Contact'" class="w3-row-padding w3-margin-top">
-            <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black w3-margin" style="overflow-wrap: break-word;">
-              <span class="w3-margin-right">
+          <div *ngIf="selectedMarker == 'Contact'" class="w3-row-padding">
+            <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-black w3-margin w3-center" style="overflow-wrap: break-word;">
+              <span class="w3-margin w3-xxlarge">
                 <i [class]="contactDetail.icon"></i>
               </span>
+              <br>
               <span>
-                 {{contactDetail.detail}}
-              </span>
-              <span class="w3-margin-left">
-                <i [class]="contactDetail.icon"></i>
+                <a [href]="contactDetail.link">
+                  <b>{{contactDetail.detail}}</b>
+                </a> 
               </span>
               <br>
             </div>
@@ -240,9 +326,27 @@
   </div>
 </div>
 
-
-
-
 <audio autoplay loop style='display: none'>
   <source src="assets/Village-ambience.mp3" type="audio/mpeg">
 </audio>
+
+<!-- load images in the background to use the right away -->
+<!-- <div class="w3-hide">
+
+  <div *ngFor="let experience of data.experiences">
+    <div *ngFor="let place of experience.places">
+      <img [src]="place.imageUrl">
+    </div>
+  </div>
+
+  <div *ngFor="let slide of slides, let i=index" >
+    <img [src]="'assets/' + slide.marker + '.png'">
+  </div>
+
+</div> -->
+
+
+
+
+
+

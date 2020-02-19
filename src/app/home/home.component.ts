@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DigitalClockComponent } from "../digitalClock/digitalClock.component";
 
 @Component({
   selector: 'app-home',

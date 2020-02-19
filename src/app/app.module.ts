@@ -8,6 +8,7 @@ import { AppRoutingModule } from './routing.module';
 import { DarkThemeComponent } from './darkTheme/darkTheme.component';
 import { ColorsThemeComponent } from './colorsTheme/colorsTheme.component';
 import { CartoonThemeComponent } from './cartoonTheme/cartoonTheme.component';
+import { DigitalClockComponent } from './digitalClock/digitalClock.component';
 
 @NgModule({
    declarations: [
@@ -16,7 +17,8 @@ import { CartoonThemeComponent } from './cartoonTheme/cartoonTheme.component';
       HomeComponent,
       DarkThemeComponent,
       ColorsThemeComponent,
-      CartoonThemeComponent
+      CartoonThemeComponent,
+      DigitalClockComponent
    ],
    imports: [
       BrowserModule,

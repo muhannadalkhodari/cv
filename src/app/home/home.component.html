@@ -1,65 +1,85 @@
-<div class="w3-white w3-hover-light-gray w3-button" [routerLink]="['/lightTheme']" style="width: 50%; height: 50%; position: absolute; top: 0; left: 0;">
-  <div class="w3-display-topleft w3-margin w3-padding" style="font-size: 2vw;">
-    <div class="w3-marign w3-padding">
-      <div class="w3-marign w3-padding">
-        <div class="w3-marign w3-padding">
-          <div class="w3-marign w3-padding">
-            Stylish Light
-          </div>
-        </div>
-      </div>
+<div class='w3-indigo'>
+
+  <div class="w3-row">
+
+    <div class="w3-col l3 m4 s12 w3-opacity">
+
+      .
+
     </div>
+
+    <div class="w3-col l6 m4 s12">
+
+      <div class="w3-card-4 w3-margin w3-padding w3-background-with-opacity w3-full-center">
+        <!-- <a href="https://time.is/Syria" id="time_is_link" rel="nofollow" style="font-size:36px"></a>
+        <span id="Syria_z411" class="w3-center" style="font-size:36px"></span> -->
+        <app-digitalClock></app-digitalClock>
+      </div>
+
+      <div class="w3-card-4 w3-margin w3-padding w3-background-with-opacity">
+        <!-- weather widget start -->
+        <a  class="weatherwidget-io" 
+            href="https://forecast7.com/en/33d5136d28/damascus/" 
+            data-label_1="DAMASCUS" 
+            data-label_2="WEATHER" 
+            data-days="3" 
+            data-theme="original" 
+        >
+          DAMASCUS WEATHER
+        </a>
+        <!-- weather widget end -->
+      </div>
+
+      
+    </div>
+
+    <div class="w3-col l3 m4 s12">
+      
+      
+
+    </div>
+
   </div>
-</div>
-<div class="w3-black w3-hover-dark-gray w3-button" [routerLink]="['/darkTheme']" style="width: 50%; height: 50%; position: absolute; top: 0; right: 0;">
-  <div class="w3-display-topright w3-margin w3-padding" style="font-size: 2vw;">
-    <div class="w3-marign w3-padding">
-      <div class="w3-marign w3-padding">
-        <div class="w3-marign w3-padding">
-          <div class="w3-marign w3-padding">
-            Minimalistic Dark
-          </div>
-        </div>
+
+  <div class="w3-row">
+
+    <div class="w3-white w3-hover-light-gray w3-button" [routerLink]="['/lightTheme']" >
+      <div class="w3-margin w3-padding" style="font-size: 2vw;">
+                Stylish Light
       </div>
     </div>
+    <div class="w3-black w3-hover-dark-gray w3-button" [routerLink]="['/darkTheme']" >
+      <div class="w3-margin w3-padding" style="font-size: 2vw;">
+        Minimalistic Dark
+      </div>
+    </div>
+    <div class="w3-2018-valiant-poppy w3-hover-red w3-button" [routerLink]="['/colorsTheme']" >
+      <div class="w3-margin w3-padding" style="font-size: 2vw;">
+        Classic Colored
+      </div>
+    </div>
+    <div class="w3-indigo w3-hover-blue w3-button" [routerLink]="['/cartoonsTheme']" >
+      <div class="w3-margin w3-padding" style="font-size: 2vw;">
+        Cartoonish Isometric
+      </div>
+    </div>
+
     
-  </div>
-</div>
-<div class="w3-2018-valiant-poppy w3-hover-red w3-button" [routerLink]="['/colorsTheme']" style="width: 50%; height: 50%; position: absolute; bottom: 0; left: 0;">
-  <div class="w3-display-bottomleft w3-margin w3-padding" style="font-size: 2vw;">
-    <div class="w3-marign w3-padding">
-      <div class="w3-marign w3-padding">
-        <div class="w3-marign w3-padding">
-          <div class="w3-marign w3-padding">
-            Classic Colored
-          </div>
+    <!-- <div class="w3-teal w3-hover-blue-gray" style="width: 50%; height: 50%; position: absolute; bottom: 25%; right: 25%;">
+      <div class="w3-center">
+        <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/s960x960/68425560_2358965387473534_3041670825137668096_o.jpg?_nc_cat=100&_nc_ohc=6THyQntN2vgAX_hhdTg&_nc_ht=scontent-mrs2-1.xx&_nc_tp=1002&oh=c3a83689c0b5bd42aabd75128249b2a5&oe=5E95D0FF" class="w3-circle w3-margin w3-border w3-padding-small w3-hover-grayscale" style="width: 25%;">
+        <div class="w3-margin" style="font-size: 2vw;">
+          Hello! 
+          <br/>
+          This is <b>Muhannad Al-Khodari</b>'s CV
+          <br/>
+          Please select a style :)
         </div>
       </div>
-    </div>
+    </div> -->
+
   </div>
+  
+
 </div>
-<div class="w3-indigo w3-hover-blue w3-button" [routerLink]="['/cartoonsTheme']" style="width: 50%; height: 50%; position: absolute; bottom: 0; right: 0;">
-  <div class="w3-display-bottomright w3-margin w3-padding" style="font-size: 2vw;">
-    <div class="w3-marign w3-padding">
-      <div class="w3-marign w3-padding">
-        <div class="w3-marign w3-padding">
-          <div class="w3-marign w3-padding">
-            Cartoonish Isometric
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="w3-teal w3-hover-blue-gray" style="width: 50%; height: 50%; position: absolute; bottom: 25%; right: 25%;">
-  <div class="w3-center">
-    <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/s960x960/68425560_2358965387473534_3041670825137668096_o.jpg?_nc_cat=100&_nc_ohc=6THyQntN2vgAX_hhdTg&_nc_ht=scontent-mrs2-1.xx&_nc_tp=1002&oh=c3a83689c0b5bd42aabd75128249b2a5&oe=5E95D0FF" class="w3-circle w3-margin w3-border w3-padding-small w3-hover-grayscale" style="width: 25%;">
-    <div class="w3-margin" style="font-size: 2vw;">
-      Hello! 
-      <br/>
-      This is <b>Muhannad Al-Khodari</b>'s CV
-      <br/>
-      Please select a style :)
-    </div>
-  </div>
-</div>
+

@@ -199,15 +199,23 @@ export class DataService
   [
     {
       detail: "Damascus, Syria",
+      link: "https://goo.gl/maps/rTkABquZqAEPREMN8",
       icon:   "fa fa-map-marker fa-fw w3-text-red"
     },
     {
       detail: "+963 931874562",
+      link: "tel:+963931874562",
       icon:   "fa fa-phone fa-fw w3-text-green"
     },
     {
       detail: "muhannad.al.khodari@outlook.com",
+      link: "mailto:muhannad.al.khodari@outlook.com",
       icon:   "fa fa-envelope fa-fw w3-text-blue"
+    },
+    {
+      detail: "Muhannad Al-Khodari",
+      link: "https://www.facebook.com/muhannad.al.khodari",
+      icon:   "fa fa-facebook-official fa-fw w3-text-indigo"
     }
 
   ];
@@ -220,14 +228,14 @@ export class DataService
 
 }
 
-class skill
+export class skill
 {
   name: string;
   icons: string[];
   value: number;
 }
 
-class place
+export class place
 {
   name: string;
   link: string;
@@ -235,7 +243,7 @@ class place
   circle: boolean;
 }
 
-class experience
+export class experience
 {
   title: string;
   description: string;
@@ -247,5 +255,6 @@ class experience
 class contactDetail
 {
   detail: string;
+  link: string;
   icon:   string;
 }

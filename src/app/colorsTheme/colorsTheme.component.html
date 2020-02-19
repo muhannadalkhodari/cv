@@ -58,7 +58,9 @@
               <i [class]="contactDetail.icon"></i>
             </span>
             <span>
-               {{contactDetail.detail}}<br>
+              <a [href]="contactDetail.link">
+                <b>{{contactDetail.detail}}</b>
+              </a> 
             </span>
           </div>
         </div>

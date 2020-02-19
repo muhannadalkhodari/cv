@@ -68,30 +68,31 @@
   
 
     <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
-      <header class="w3-text-white w3-center">
+      <header class="w3-text-white w3-center w3-margin">
         <h2><b>My Skills</b></h2>
       </header>
       
       <div class="w3-text-white" *ngFor="let skill of data.skills">
         <div class="w3-margin">
+
           <div class="w3-row w3-hide-large">
-            <span class="w3-large w3-margin-right" *ngFor="let icon of skill.icons">
-              <i [class]='icon'></i>
+            <span class="w3-large" *ngFor="let icon of skill.icons">
+              <i [class]='icon'></i>&nbsp;
             </span>
             {{skill.name}}
           </div>          
         
-          <div class="w3-row w3-theme-l3">
-            <div class="w3-theme w3-padding" [style.width]="skill.value + '%'">
-              <span class="w3-large w3-hide-medium w3-hide-small w3-margin-right" *ngFor="let icon of skill.icons">
-                <i [class]='icon'></i>
+          <div class="w3-row w3-theme-d3 w3-round-large">
+            <div class="w3-theme-l2 w3-padding w3-round-large" [style.width]="skill.value + '%'">
+              <span class="w3-large w3-hide-medium w3-hide-small" *ngFor="let icon of skill.icons">
+                <i [class]='icon'></i>&nbsp;
               </span>
               <span class="w3-large w3-hide-medium w3-hide-small w3-margin-right">
                 {{skill.name}}
               </span>
-              
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -109,7 +110,7 @@
   <div class="w3-content" id="work">
 
     <div class="w3-container w3-margin w3-padding w3-round-large blueGreyTransparentBackColor">
-      <header class="w3-text-white w3-center">
+      <header class="w3-text-white w3-center w3-margin">
         <h2><b>My Work</b></h2>
       </header>
 
@@ -117,7 +118,7 @@
 
         <div *ngFor="let experience of data.experiences" class="w3-col l6">
           <div class="w3-card-4 w3-round-large w3-margin-bottom w3-text-white w3-center w3-theme-d4">
-            <header class="w3-container w3-padding blueGreyTransparentBackColor">
+            <header class="w3-container w3-padding blueGreyTransparentBackColor" style="border-radius: 8px 8px 0px 0px;">
               <div class="w3-margin">
                 <a *ngFor="let place of experience.places" [href]="place.link">
                   <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image w3-white w3-round-xlarge" style="height:100px; margin: 0 3px; padding: 1px;" [style.max-width]="100/experience.places.length + '%'">
@@ -132,7 +133,7 @@
                 </p>
               </div>
             </div>
-            <footer class="w3-padding-small blueGreyTransparentBackColor">
+            <footer class="w3-padding-small blueGreyTransparentBackColor"  style="border-radius: 0px 0px 8px 8px;">
               <span *ngIf="!experience.to">Since {{experience.from}} </span>
               <span *ngIf="experience.to"> From {{experience.from}}  to {{experience.to}}</span>
             </footer>
@@ -159,7 +160,7 @@
 
         <div *ngFor="let study of data.studies" class="w3-col l6">
           <div class="w3-card-4 w3-round-large w3-margin-bottom w3-text-white w3-center w3-theme-d4">
-            <header class="w3-container w3-padding blueGreyTransparentBackColor">
+            <header class="w3-container w3-padding blueGreyTransparentBackColor" style="border-radius: 8px 8px 0px 0px;">
               <div class="w3-margin">
                 <a *ngFor="let place of study.places" [href]="place.link">
                   <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" class="w3-image w3-white w3-round-xlarge" style="height:100px; margin: 0 3px; padding: 5px;"  [style.max-width]="100/study.places.length + '%'">
@@ -174,7 +175,7 @@
                 </p>
               </div>
             </div>
-            <footer class="w3-padding-small blueGreyTransparentBackColor">
+            <footer class="w3-padding-small blueGreyTransparentBackColor" style="border-radius: 0px 0px 8px 8px;">
               <span *ngIf="!study.to">Since {{study.from}} </span>
               <span *ngIf="study.to"> From {{study.from}}  to {{study.to}}</span>
             </footer>
@@ -209,7 +210,9 @@
       <div class="w3-col l6 m8 s10 w3-margin-top w3-margin-bottom w3-center">
         <div *ngFor="let contactDetail of data.contactDetails" class="w3-row w3-text-white w3-large">
           <span>
-            {{contactDetail.detail}}<br>
+            <a [href]="contactDetail.link">
+              <b>{{contactDetail.detail}}</b>
+            </a> 
           </span>
         </div>
       </div>

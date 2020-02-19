@@ -1,0 +1,12 @@
+.w3-full-center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w3-background-with-opacity
+{
+    background-color: #1f557cb6;
+}
+

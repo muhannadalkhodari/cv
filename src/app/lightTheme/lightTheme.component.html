@@ -34,7 +34,7 @@
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h3 class="w3-center">About Me</h3>
   <p class="w3-center"><em>{{data.aboutMe_short}}</em></p>
-  <p>
+  <p class="w3-center">
     <span *ngFor="let item of data.aboutMe_long">
       {{item}}
       <br>
@@ -56,7 +56,7 @@
       </span>
       {{skill.name}}
     </div>
-    <div class="w3-light-grey w3-margin-bottom">
+    <div class="w3-grey w3-margin-bottom">
       <div class="w3-container w3-padding-small w3-dark-grey w3-center" [style.width]="skill.value + '%'">
         {{skill.value}}%
       </div>
@@ -175,7 +175,9 @@
               <i [class]="contactDetail.icon"></i>
             </span>
             <span>
-               {{contactDetail.detail}}<br>
+              <a [href]="contactDetail.link">
+                <b>{{contactDetail.detail}}</b>
+              </a> 
             </span>
           </div>
           

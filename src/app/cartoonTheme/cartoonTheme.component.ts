@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { DataService } from './../services/data.service';
+import { DataService, experience } from './../services/data.service';
 import { timer } from 'rxjs';
 import { ViewportScroller } from '@angular/common';
 
@@ -20,11 +20,11 @@ export class CartoonThemeComponent implements OnInit
 
   originalSlides: slide[] = 
   [
-    { width: 1000 ,   markerMarginLeft: 180 ,    markerMarginTop : 500,   photoUrl: null, marker: "Welcome"   },
-    { width: 1600 ,   markerMarginLeft: 200 ,    markerMarginTop : 575,   photoUrl: null, marker: "Skills"    },
-    { width: 2000 ,   markerMarginLeft: 800 ,    markerMarginTop : 400,   photoUrl: null, marker: "Education" },
-    { width: 2000 ,   markerMarginLeft: 1156,    markerMarginTop : 320,   photoUrl: null, marker: "Work"      },
-    { width: 1400 ,   markerMarginLeft: 1270,    markerMarginTop : 428,   photoUrl: null, marker: "Contact"   }
+    { width: 1000 ,   markerMarginLeft: 180 ,    markerMarginTop : 500,   photoUrl: null, marker: "Welcome"  , markerOffset: 48  },
+    { width: 1600 ,   markerMarginLeft: 200 ,    markerMarginTop : 575,   photoUrl: null, marker: "Skills"   , markerOffset: 28  },
+    { width: 2000 ,   markerMarginLeft: 800 ,    markerMarginTop : 400,   photoUrl: null, marker: "Education", markerOffset: 58  },
+    { width: 2000 ,   markerMarginLeft: 1156,    markerMarginTop : 320,   photoUrl: null, marker: "Work"     , markerOffset: 28  },
+    { width: 1400 ,   markerMarginLeft: 1270,    markerMarginTop : 428,   photoUrl: null, marker: "Contact"  , markerOffset: 40  }
   ];
 
   slides: slide[] = [];
@@ -39,7 +39,13 @@ export class CartoonThemeComponent implements OnInit
   photosUrl: string = "url('assets/Muhannadonia_";
 
   selectedMarker: string = null;
-  selectedExperience = null;
+  selectedExperienceIndex: number = 0;
+
+  flipCard180: boolean = false;
+  zoomOut: boolean = false;
+  zoomIn: boolean = false;
+
+  disableButtons: boolean = false;
 
   ngOnInit() 
   {
@@ -76,6 +82,7 @@ export class CartoonThemeComponent implements OnInit
       s.markerMarginTop  = heightRatio * this.originalSlides[i].markerMarginTop - 64;
       s.photoUrl = this.photosUrl + (i+1) + ".png')";
       s.marker = originalSlide.marker;
+      s.markerOffset = originalSlide.markerOffset;
       this.wrapperWidth += s.width; 
       this.slides.push(s);
     });
@@ -98,6 +105,38 @@ export class CartoonThemeComponent implements OnInit
     })
   }
 
+  next()
+  {
+    this.zoom(+1);
+  }
+
+  prev()
+  {
+    this.zoom(-1);
+  }
+
+  zoom(value: number)
+  {
+    this.disableButtons = true;
+    this.zoomOut = true; 
+    setTimeout(() => 
+    {
+      this.selectedExperienceIndex = this.selectedExperienceIndex + value;
+      this.zoomOut = false;
+      if(this.flipCard180)
+      {
+        this.flipCard180 = false;
+      }
+      this.zoomIn = true;
+      setTimeout(() => 
+      {
+        this.zoomIn = false;
+        this.disableButtons = false;
+      }, 500);
+
+    }, 500);
+  }
+
 }
 
 class slide
@@ -106,5 +145,6 @@ class slide
   markerMarginLeft: number;
   markerMarginTop : number;
   photoUrl: string;
-  marker: string;  
+  marker: string;
+  markerOffset: number;  
 }
