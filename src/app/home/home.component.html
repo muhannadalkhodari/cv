@@ -1,4 +1,15 @@
-<div style="width: 100vw; height: 100vh; background-image: url(assets/material-background.jpg); background-size: cover; z-index: -5;">
+<div style="width: 100vw; height: 100vh; background-image: url(assets/material-background.png); background-size: cover; position: absolute; z-index: -5;">
+
+  <div class="w3-row w3-top">
+
+    <div class="w3-container w3-center w3-light-grey w3-opacity" style="cursor: pointer;" (click)="showSplashScreen()">
+      Welcome
+    </div>
+  </div>
+
+  <div class="w3-row" style="height: 25px; opacity: 0;">
+    .
+  </div>
 
   <div class="w3-row">
 
@@ -12,9 +23,9 @@
         <app-digitalClock></app-digitalClock>
       </div>
 
-      <div class="w3-card-4 w3-margin w3-padding w3-background-with-opacity">
+      <div class="w3-card-4 w3-margin w3-background-with-opacity">
         <!-- weather widget start -->
-        <a  class="weatherwidget-io" 
+        <a  class="weatherwidget-io" style="opacity: 0.6 !important;"
             href="https://forecast7.com/en/33d5136d28/damascus/" 
             data-label_1="DAMASCUS" 
             data-label_2="WEATHER" 
@@ -40,7 +51,7 @@
       <div *ngFor="let theme of data.themes" class="w3-col s3 w3-center w3-margin-bottom" >
         <div class="w3-row">
           <div class="w3-full-center">
-            <div [class]="'w3-card-2 w3-margin w3-full-center w3-text-white w3-center w3-' + theme.color" 
+            <div [class]="'w3-card-4 w3-margin w3-full-center w3-text-white w3-center w3-' + theme.color" 
                   style="width: 80px; height: 80px; cursor: pointer;"
                   [routerLink]="['/' + theme.link]"
             >
@@ -62,23 +73,53 @@
         
       </div>
     </div>
-    
-    
-    <!-- <div class="w3-teal w3-hover-blue-gray" style="width: 50%; height: 50%; position: absolute; bottom: 25%; right: 25%;">
-      <div class="w3-center">
-        <img src="https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/s960x960/68425560_2358965387473534_3041670825137668096_o.jpg?_nc_cat=100&_nc_ohc=6THyQntN2vgAX_hhdTg&_nc_ht=scontent-mrs2-1.xx&_nc_tp=1002&oh=c3a83689c0b5bd42aabd75128249b2a5&oe=5E95D0FF" class="w3-circle w3-margin w3-border w3-padding-small w3-hover-grayscale" style="width: 25%;">
-        <div class="w3-margin" style="font-size: 2vw;">
-          Hello! 
-          <br/>
-          This is <b>Muhannad Al-Khodari</b>'s CV
-          <br/>
-          Please select a style :)
-        </div>
-      </div>
-    </div> -->
 
   </div>
   
 
 </div>
 
+<div class="splash-screen" [class.show-splash]="splashScreen" [class.hide-splash]="!splashScreen">
+  
+  <div style="margin-top: 10vw;" [class.w3-hide]="!splashScreenContent">
+
+    <div class="w3-row w3-full-center">
+
+      <div class="w3-container w3-margin">
+        <img [src]="data.contactHomePhotoUrl" class="w3-round-large box-shadow" style="width: 175px; height: 175px;">
+      </div>
+      
+    </div>
+    
+    <div class="w3-row w3-xxlarge zero-opacity">
+      .
+    </div>
+
+    <div class="w3-row w3-xxlarge w3-text-white w3-full-center">
+      Welcome to my CV
+    </div>
+    <div class="w3-row w3-xlarge w3-center w3-margin-top w3-text-white">
+      Check inside for details
+    </div>
+
+    <div class="w3-row w3-xxlarge zero-opacity">
+      .
+    </div>
+
+    <div class="w3-row w3-xlarge w3-center w3-bottom">
+      <div class="w3-margin-bottom w3-full-center">
+        <div class="circle box-shadow w3-full-center" style="cursor: pointer;" (click)="hideSplashScreen()">
+          <i class="material-icons">
+            lock_open
+          </i>
+        </div>
+      </div>
+      
+    </div>
+            
+  </div>
+
+  
+
+  
+</div>

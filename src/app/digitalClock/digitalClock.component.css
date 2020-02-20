@@ -29,11 +29,12 @@
    }
    
    div.days .day {
-       display: inline-block;
+       /* display: inline-block; */
+       display: none;
    }
    
    div.days .day p {
-       font-size: 12px;
+       font-size: 8px;
        font-weight: bold;
        font-family: sans-serif;
        margin: 5px;
@@ -44,6 +45,7 @@
    /* CLOCK */
    div.clock {
        margin: 5px 0;
+       color: white;
    }
    
    div.clock div{
@@ -52,7 +54,7 @@
    }
    
    div.clock div p{
-       font-size: 50px;
+       font-size: 35px;
        position: relative;
        z-index: 100;
    }
@@ -73,16 +75,19 @@
    }
    
    div.am-pm div p {
-       font-size: 16px;
+       font-size: 10px;
        font-weight: bold;
+       margin-left: 5px;
        width: 100%;
    }
    
    .am, .pm {
        color: #184261;
+       display: none;
    }
    
    /*CLASS THAT CHANGES COLOR OF TEXT TO APPEAR LIKE ITS "ON"*/
    .light-on {
        color: #ffffff;
+       display: block !important;
    }

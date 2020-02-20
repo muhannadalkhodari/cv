@@ -14,9 +14,31 @@ export class HomeComponent implements OnInit {
     public data: DataService
   ) { }
 
+  splashScreen: boolean = true;
+  splashScreenContent: boolean = true;
+
   ngOnInit() 
   {
-    
+    if(localStorage.getItem('splashSeen') == 'true')
+    {
+      this.hideSplashScreen();
+    }
+  }
+
+  hideSplashScreen()
+  {
+    this.splashScreen = false;
+    this.splashScreenContent = false;
+    localStorage.setItem('splashSeen', 'true');
+  }
+
+  showSplashScreen()
+  {
+    this.splashScreen = true;
+    setTimeout(() => {
+      this.splashScreenContent = true;
+    }, 900);
+    localStorage.setItem('splashSeen', 'false');
   }
 
 }

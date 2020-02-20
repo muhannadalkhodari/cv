@@ -251,6 +251,8 @@ export class DataService
   contactPhotoUrl: string = "assets/me_brown.jpg";
   contactRedPhotoUrl: string = "assets/me_red.jpeg";
 
+  contactHomePhotoUrl: string = "assets/me_front.jpg";
+
   contactDarkPhotoUrl: string = "assets/me_header.jpg";
   contactSmallDarkPhotoUrl: string = "assets/black-me.jpeg";
 
