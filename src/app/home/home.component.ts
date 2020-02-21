@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DigitalClockComponent } from "../digitalClock/digitalClock.component";
-import { DataService } from '../services/data.service';
+import { DataService, theme } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +12,14 @@ export class HomeComponent implements OnInit {
 
   constructor
   (
-    public data: DataService
+    public data: DataService,
+    private router: Router
   ) { }
 
   splashScreen: boolean = true;
   splashScreenContent: boolean = true;
+  appToOpen: theme = null;
+  appToOpenColor: string = '';
 
   ngOnInit() 
   {
@@ -39,6 +43,17 @@ export class HomeComponent implements OnInit {
       this.splashScreenContent = true;
     }, 900);
     localStorage.setItem('splashSeen', 'false');
+  }
+
+  openApp(app: theme)
+  {
+    this.appToOpen = app;
+    this.appToOpenColor = 'w3-' + app.color;
+
+    setTimeout(() => {
+      this.router.navigate(['/'+ app.link ]);
+    }, 1000);
+
   }
 
 }

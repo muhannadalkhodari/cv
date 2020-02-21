@@ -289,7 +289,7 @@ class contactDetail
   icon:   string;
 }
 
-class theme
+export class theme
 {
   name:   string;
   link:   string;

@@ -17,7 +17,7 @@
     width: 100vw;
     height: 100vh;
     transition: height 1s;
-    background-image: linear-gradient(-45deg, #0073e6, #00afff);
+    background-image: linear-gradient(-45deg, #0062c4, #00afff);
 }
 
 .show-splash
@@ -59,3 +59,43 @@
     opacity: 0;
 }
 
+.app-shortcut
+{
+    width: 80px; 
+    height: 80px; 
+    cursor: pointer;
+}
+
+.app
+{
+    position: absolute !important;
+    z-index: 1000000;
+    width: 0; 
+    height: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s, background-color 0.1s;
+}
+
+.app-open
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+.app-content
+{
+    position: absolute !important;
+    z-index: 1000000;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.blank
+{
+    background-color: #ffffff10;
+}
