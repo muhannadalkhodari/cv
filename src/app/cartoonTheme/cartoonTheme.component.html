@@ -103,8 +103,11 @@
                 </div>
                 <div class="w3-row w3-margin w3-xlarge">
                   <i>
-                    <b>Hint:</b> Click on the red markers 
-                    <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i>
+                    <b>Hint:</b> Click on the 
+                    <span class="w3-red w3-text-white w3-round-large">
+                      &nbsp; red labels &nbsp;
+                    </span>
+                    <!-- <i class="fa fa-map-marker w3-text-red" aria-hidden="true"></i> -->
                   </i>
                 </div>
               </div>
@@ -215,8 +218,12 @@
                                 [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience"
                                 style="max-height: 50vh; max-width: 100%;"
                             >
-                            <h5><b>{{data.experiences[selectedExperienceIndex].title}}</b></h5>
-                            <i class="material-icons">touch_app</i>
+                            <span class="w3-large">
+                              <b>{{data.experiences[selectedExperienceIndex].title}}</b>
+                            </span>
+                            <br>
+                            <!-- <i class="material-icons">touch_app</i> -->
+                            (Click for details)
                           </div>
                         </div>
                         
@@ -291,6 +298,17 @@
                   </div>
                   
                 </div>
+
+                <div class="w3-row w3-center w3-margin">
+                  <div class="w3-button w3-margin w3-large w3-dark-grey">
+                    <a href="assets/CV.pdf" style="text-decoration: none;">
+                      <i class="fa fa-download" aria-hidden="true"></i>
+                      &nbsp;Download&nbsp;
+                      <i class="fa fa-download" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+
               </div>
               
             </div>
@@ -344,24 +362,5 @@
 <audio autoplay loop style='display: none'>
   <source src="assets/Village-ambience.mp3" type="audio/mpeg">
 </audio>
-
-<!-- load images in the background to use the right away -->
-<!-- <div class="w3-hide">
-
-  <div *ngFor="let experience of data.experiences">
-    <div *ngFor="let place of experience.places">
-      <img [src]="place.imageUrl">
-    </div>
-  </div>
-
-  <div *ngFor="let slide of slides, let i=index" >
-    <img [src]="'assets/' + slide.marker + '.png'">
-  </div>
-
-</div> -->
-
-
-
-
 
 

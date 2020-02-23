@@ -58,3 +58,18 @@ body, html {
   }
 }
 */
+
+.circle 
+{
+    height: 75px;
+    width: 75px;
+    background-color: rgba(255, 255, 255, 0.767);
+    border-radius: 50%;
+}
+
+.w3-full-center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

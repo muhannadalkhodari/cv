@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -6,14 +6,39 @@ import { DataService } from '../services/data.service';
   templateUrl: './darkTheme.component.html',
   styleUrls: ['./darkTheme.component.css']
 })
-export class DarkThemeComponent implements OnInit {
+export class DarkThemeComponent implements OnInit, AfterViewInit  
+{
+
+  // @ViewChild('home') homeElement: ElementRef;
+  @ViewChild('about', null) aboutElement: ElementRef;
+  @ViewChild('work', null) workElement: ElementRef;
+  @ViewChild('education', null) educationElement: ElementRef;
+  @ViewChild('contact', null) contactElement: ElementRef;
+
+  public currentActive = 0;
+  public homeOffset: Number = null;
+  public aboutOffset: Number = null;
+  public workOffset: Number = null;
+  public educationOffset: Number = null;
+  public contactOffset: Number = null;
 
   constructor
   (
     public data: DataService
   ) { }
 
-  ngOnInit() {
+  ngAfterViewInit()
+  {
+    // this.homeOffset = this.homeElement.nativeElement.offsetTop;
+    this.aboutOffset = this.aboutElement.nativeElement.offsetTop;
+    this.workOffset = this.workElement.nativeElement.offsetTop;
+    this.educationOffset = this.educationElement.nativeElement.offsetTop;
+    this.contactOffset = this.contactElement.nativeElement.offsetTop;
+  }
+
+  ngOnInit() 
+  {
+
   }
 
   showMenu: boolean = false;
@@ -37,6 +62,23 @@ export class DarkThemeComponent implements OnInit {
       element.classList.remove("w3-animate-top");
       element.classList.remove("w3-white");
     }
+
+    
+    // if (window.pageYOffset >= this.homeOffset && window.pageYOffset < this.aboutOffset) {
+    //   this.currentActive = 1;
+    // } else 
+    if (window.pageYOffset >= this.aboutOffset && window.pageYOffset < this.workOffset) {
+      this.currentActive = 2;
+    } else if (window.pageYOffset >= this.workOffset && window.pageYOffset < this.educationOffset) {
+      this.currentActive = 3;
+    } else if (window.pageYOffset >= this.educationOffset && window.pageYOffset < this.contactOffset) {
+      this.currentActive = 4;
+    } else if (window.pageYOffset >= this.contactOffset) {
+      this.currentActive = 5;
+    } else {
+      this.currentActive = 0;
+    }
+  
   }
 
   toggleFunction()

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from './../services/data.service';
 
 
@@ -7,7 +7,21 @@ import { DataService } from './../services/data.service';
   templateUrl: './lightTheme.component.html',
   styleUrls: ['./lightTheme.component.css']
 })
-export class LightThemeComponent implements OnInit {
+export class LightThemeComponent implements OnInit, AfterViewInit  
+{
+
+  // @ViewChild('home') homeElement: ElementRef;
+  @ViewChild('about', null) aboutElement: ElementRef;
+  @ViewChild('work', null) workElement: ElementRef;
+  @ViewChild('education', null) educationElement: ElementRef;
+  @ViewChild('contact', null) contactElement: ElementRef;
+
+  public currentActive = 0;
+  public homeOffset: Number = null;
+  public aboutOffset: Number = null;
+  public workOffset: Number = null;
+  public educationOffset: Number = null;
+  public contactOffset: Number = null;
 
   constructor
   (
@@ -16,7 +30,18 @@ export class LightThemeComponent implements OnInit {
 
   showMenu: boolean = false;
 
-  ngOnInit() {
+  ngAfterViewInit()
+  {
+    // this.homeOffset = this.homeElement.nativeElement.offsetTop;
+    this.aboutOffset = this.aboutElement.nativeElement.offsetTop;
+    this.workOffset = this.workElement.nativeElement.offsetTop;
+    this.educationOffset = this.educationElement.nativeElement.offsetTop;
+    this.contactOffset = this.contactElement.nativeElement.offsetTop;
+  }
+
+  ngOnInit() 
+  {
+
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -37,6 +62,21 @@ export class LightThemeComponent implements OnInit {
       element.classList.remove("w3-card");
       element.classList.remove("w3-animate-top");
       element.classList.remove("w3-light-grey");
+    }
+
+    // if (window.pageYOffset >= this.homeOffset && window.pageYOffset < this.aboutOffset) {
+    //   this.currentActive = 1;
+    // } else 
+    if (window.pageYOffset >= this.aboutOffset && window.pageYOffset < this.workOffset) {
+      this.currentActive = 2;
+    } else if (window.pageYOffset >= this.workOffset && window.pageYOffset < this.educationOffset) {
+      this.currentActive = 3;
+    } else if (window.pageYOffset >= this.educationOffset && window.pageYOffset < this.contactOffset) {
+      this.currentActive = 4;
+    } else if (window.pageYOffset >= this.contactOffset) {
+      this.currentActive = 5;
+    } else {
+      this.currentActive = 0;
     }
   }
 

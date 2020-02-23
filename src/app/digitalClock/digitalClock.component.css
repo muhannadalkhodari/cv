@@ -83,6 +83,7 @@
        /* font-family: sans-serif; */
        text-transform: uppercase;
        width: 30px;
+       line-height: 20px;
    }
    
    div.am-pm div p {
@@ -94,7 +95,6 @@
    
    .am, .pm {
        color: #184261;
-       display: none;
    }
    
    /*CLASS THAT CHANGES COLOR OF TEXT TO APPEAR LIKE ITS "ON"*/
