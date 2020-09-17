@@ -1,0 +1,197 @@
+<!-- Fontawesome -->
+<!-- <link type="text/css" href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet"> -->
+
+<!-- Pixel CSS -->
+<!-- <link type="text/css" href="./assets/css/neumorphism.css" rel="stylesheet"> -->
+
+<!-- Core -->
+<!-- <script src="./assets/vendor/jquery/dist/jquery.min.js"></script>
+<script src="./assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+<script src="./assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./assets/vendor/headroom.js/dist/headroom.min.js"></script> -->
+
+<!-- Vendor JS -->
+<!-- <script src="./assets/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<script src="./assets/vendor/nouislider/distribute/nouislider.min.js"></script>
+<script src="./assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="./assets/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="./assets/vendor/jarallax/dist/jarallax.min.js"></script>
+<script src="./assets/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+<script src="./assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+<script src="./assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script src="./assets/vendor/prismjs/prism.js"></script>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script> -->
+
+<!-- Neumorphism JS -->
+<!-- <script src="./assets/assets/js/neumorphism.js"></script> -->
+
+<div class="body">
+
+</div>
+
+<div class="background">
+
+    <!-- <div class="navbar navbar-theme-primary navbar-light navbar-theme-primary shadow-soft border-light" style="position: fixed; bottom: 0; width: 100%; z-index: 1000;">
+
+        <div class="w3-container w3-padding w3-block">
+            
+            <div class="w3-row-padding">
+                <div class="w3-col l4 m4 s4 w3-padding">
+                    <a class="btn btn-primary w3-block" (click)='changeTab("about")' [class.active]='currentActive == "about"'><i class="fa fa-user"></i><span class="w3-hide-small w3-padding">About</span></a>
+                </div>
+                <div class="w3-col l4 m4 s4 w3-padding">
+                    <a class="btn btn-primary w3-block" (click)='changeTab("education")' [class.active]='currentActive == "education"'><i class="fa fa-book"></i><span class="w3-hide-small w3-padding">Education</span></a>
+                </div>
+                <div class="w3-col l4 m4 s4 w3-padding">
+                    <a class="btn btn-primary w3-block" (click)='changeTab("work")' [class.active]='currentActive == "work"'><i class="fa fa-th"></i><span class="w3-hide-small w3-padding">Work</span></a>
+                </div>
+            </div>
+            
+        </div>
+
+    </div> -->
+
+
+    <!-- Tab Content -->
+    <div class="w3-container w3-margin bg-primary">
+        <div class="card-body w3-margin-bottom">
+            <div class="w3-container">
+                <div [class]="foldClass">
+                   
+                    <div class="w3-row" *ngIf='currentActive == "about"'>
+
+                        <!-- Section -->
+                        <section class="">
+                            <div class="w3-margin-top">
+                                <div class="w3-row w3-center w3-margin-top">
+
+                                    <div class="w3-col l1 w3-hide-medium w3-hide-small">
+                                        <div *ngFor="let contactDetail of data.contactDetails"
+                                                class="w3-row w3-full-center w3-padding"
+                                        >
+                                            <div class="w3-full-center w3-xlarge">
+                                                <div class="w3-button w3-purple w3-full-center circle" style="cursor: pointer;" >
+                                                    <a [href]='contactDetail.link'>
+                                                        <i [class]="contactDetail.icon"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="w3-row w3-hide-large">
+                                        <div *ngFor="let contactDetail of data.contactDetails"
+                                                class="w3-col s3 w3-full-center w3-padding"
+                                        >
+                                            <div class="w3-full-center w3-xlarge">
+                                                <div class="w3-button w3-purple w3-full-center circle" style="cursor: pointer;" >
+                                                    <a [href]='contactDetail.link'>
+                                                        <i [class]="contactDetail.icon"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w3-col l5 m6">
+                                        <div class="card box-shadow shape wiggle">
+                                            <img class="shape" src="assets/my_photos/me.jpg" alt="me">
+                                        </div>
+                                        <div class="w3-row w3-margin-top w3-center">
+                                            <a href="assets/CV.pdf" target="_blank" class="w3-button w3-purple w3-round-xlarge">
+                                                <i class="fa fa-download"></i> Download
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="w3-col m6 w3-left-align">
+                                        <h1 class="w3-margin-bottom">{{data.fullName}}</h1>
+                                        <div class="w3-row">
+                                            <p class="w3-text-dark-gray w3-large" *ngFor="let item of data.aboutMe_long">
+                                                {{item}}
+                                            </p>
+                                        </div>
+                                        <div class="w3-hide-lg" style="margin-bottom: 50px; opacity:0">.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- End of section -->
+
+                        
+                    </div>
+
+                    <div class="w3-row" *ngIf='currentActive == "education"'>
+                        
+                        <div class="w3-col l4 m6 s12">
+                
+                            <div style="padding-top: 50px !important;">
+                                <!-- Profile Card -->
+                                <div class="profile-card w3-margin-bottom">
+                                    <div class="card bg-primary shadow-soft border-light text-center">
+                                        
+                                        <div class="card-header">
+                                            <div class="profile-image bg-primary shadow-inset border border-light rounded mx-auto p-3 mt-n6">
+                                                <img [src]="data.contactHomePhotoUrl" class="card-img-top rounded" alt="Muhannad Al-Khodari">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                    
+                                            <div class="w3-margin-bottom">
+                                                <h3>Muhannad Al-Khodari</h3>
+                                            </div>
+                                            
+                                            <div class="w3-container w3-margin-top w3-margin-bottom">
+                                                <div *ngFor="let contactDetail of data.contactDetails"
+                                                    class="w3-col s3 w3-full-center" 
+                                                >
+                                                    <div class="w3-center w3-xlarge">
+                                                        <div class="btn btn-icon-only btn-pill" style="cursor: pointer;" >
+                                                        <a [href]='contactDetail.link'>
+                                                            <i [class]="contactDetail.icon"></i>
+                                                        </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="w3-margin-top w3-margin-bottom">
+                                                <p class="card-text w3-text-black">{{data.aboutMe_short}}</p>
+                                            </div>
+                                            
+                                            <div class="w3-margin-top">
+                                                <a href="assets/CV.pdf" target="_blank" class="btn btn-primary">
+                                                    <i class="fa fa-download"></i> Download
+                                                </a>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Profile Card -->
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="w3-row" *ngIf='currentActive == "work"'>
+                        <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus,
+                            Marfa eiusmod Pinterest in do umami readymade swag.</p>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- End of Tab Content -->
+
+    
+    
+
+</div>

@@ -23,29 +23,29 @@ body, html {
 /* First image (Logo. Full height) */
 .bgimg-1 
 {
-  background-image: url('https://scontent-mrs2-1.xx.fbcdn.net/v/t1.0-9/82653961_2679405842096152_7684222883735797760_n.jpg?_nc_cat=108&_nc_ohc=Mht6LasEyLcAX_tq9O9&_nc_ht=scontent-mrs2-1.xx&oh=9da5924d451a0d8c6b2b6c985cc1767f&oe=5EA5C41C');
+  background-image: url("/assets/my_photos/me_light_header.jpg");
   min-height: 70vh;
 }
 
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("https://wallpaperplay.com/walls/full/6/8/8/71474.jpg");
+  background-image: url("/assets/light_work.jpg");
   min-height: 400px;
 }
 
 /* Third image (Education) */
 .bgimg-3 {
-  background-image: url("https://psmag.com/.image/t_share/MTI4NzYxNDYwMzM0NTY1ODU0/shutterstock_213333985jpg.jpg");
+  background-image: url("/assets/light_education.jpg");
   min-height: 400px;
 }
 
 /* Fourth image (Contact) */
 .bgimg-4 
 {
-    background-image: url("https://free-hd-wallpapers.info/wp-content/uploads/2018/09/contact-wallpaper-contact-slashsquare-jpg-format-1500w-wallpaper.jpg");
-    min-height: 400px;
-  }
+  background-image: url("/assets/light_contact.jpg");
+  min-height: 400px;
+}
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
@@ -58,18 +58,3 @@ body, html {
   }
 }
 */
-
-.circle 
-{
-    height: 75px;
-    width: 75px;
-    background-color: rgba(255, 255, 255, 0.767);
-    border-radius: 50%;
-}
-
-.w3-full-center
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

@@ -17,11 +17,11 @@
 
     <div class="w3-col l6 m8 s12">
 
-      <div class="w3-card-4 w3-margin w3-background-with-opacity w3-full-center">
+      <div class="w3-card-4 box-shadow w3-margin w3-background-with-opacity w3-full-center">
         <app-digitalClock></app-digitalClock>
       </div>
 
-      <div class="w3-card-4 w3-margin">
+      <div class="w3-card-4 box-shadow w3-margin">
         <!-- weather widget start -->
         <a  class="weatherwidget-io" style="opacity: 0.75 !important;"
             href="https://forecast7.com/en/33d5136d28/damascus/" 
@@ -46,11 +46,16 @@
 
     <div class="w3-row w3-bottom">
 
-      <div *ngFor="let theme of data.themes" class="w3-col s3 w3-center w3-margin-bottom" >
+      <!-- <div class="w3-col m1 w3-hide-small" style="opacity: 0;">
+        .
+      </div> -->
+
+      <div *ngFor="let theme of data.themes" class="w3-col m3 s3 w3-center w3-margin-bottom" >
         <div class="w3-row">
           <div class="w3-full-center">
-            <div [class]="'w3-card-4 app-shortcut w3-margin w3-full-center w3-text-white w3-center w3-' + theme.color"
-                  (click)="openApp(theme)"                  
+            <div  class="w3-container w3-round-xlarge box-shadow text-shadow app-shortcut w3-margin w3-full-center w3-text-white w3-center"
+                  [style.background-image]="'linear-gradient(135deg, ' + theme.colorLeft + ',' + theme.colorRight + ')'"
+                  (click)="openApp(theme)"
             >
               <i class="material-icons" style="font-size:48px;">
                 {{theme.icon}}
@@ -59,7 +64,7 @@
           </div>
         </div>
         <div class="w3-row">
-          <div class="w3-full-center w3-text-white">
+          <div class="w3-full-center w3-text-white text-shadow">
             <b>
               {{theme.name}}
             </b>
@@ -76,7 +81,7 @@
 
 </div>
 
-<div class="splash-screen" [class.show-splash]="splashScreen" [class.hide-splash]="!splashScreen">
+<div class="splash-screen" [class.show-splash]="splashScreen" [class.hide-splash]="!splashScreen"  (click)="hideSplashScreen()">
   
   <div style="margin-top: 10vw;" [class.w3-hide]="!splashScreenContent">
 
@@ -105,7 +110,7 @@
 
     <div class="w3-row w3-xlarge w3-center w3-bottom">
       <div class="w3-margin-bottom w3-full-center">
-        <div class="circle box-shadow w3-full-center" style="cursor: pointer;" (click)="hideSplashScreen()">
+        <div class="circle box-shadow w3-full-center" style="cursor: pointer;">
           <i class="material-icons">
             lock_open
           </i>
@@ -121,7 +126,8 @@
   
 </div>
 
-<div [class]="'w3-container app blank ' + appToOpenColor" [class.app-open]='appToOpen != null' style="">
+<div *ngIf="appToOpen != null" class="w3-container app blank" [class.app-open]='appToOpen != null' 
+      [style.background-image]="'linear-gradient(135deg, ' + appToOpen.colorLeft + ',' + appToOpen.colorRight + ')'">
   <div *ngIf="appToOpen != null">
     <div class="w3-text-white app-content">
       <div class="w3-row">
@@ -130,8 +136,8 @@
         </i>
       </div>
       <div class="w3-row w3-margin w3-padding">
-        <i class="fa fa-spinner w3-spin w3-large" aria-hidden="true">
-        </i>
+        <!-- <i class="fa fa-spinner w3-spin w3-large" aria-hidden="true"></i> -->
+          <div class="cp-spinner cp-morph"></div>
       </div>
     </div>
   </div>

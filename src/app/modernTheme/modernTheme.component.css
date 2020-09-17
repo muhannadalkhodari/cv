@@ -1,0 +1,37 @@
+.body
+{
+    background: linear-gradient(135deg, #f11dc3, #8b1772);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100%;
+    z-index: -1000;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+.wiggle
+{
+    animation-name: wiggle_animation;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes wiggle_animation
+{
+    0%   { transform: rotate(-5deg); }
+    100% { transform: rotate(+5deg); }
+}
+
+.shape
+{
+    border-radius: 63% 37% 30% 70% / 50% 45% 55% 50%;
+    max-width: 100%;
+    height: auto;
+}

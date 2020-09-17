@@ -6,7 +6,7 @@
 
     <div [style.width]="wrapperWidth + 'px'" 
           [style.height]='innerHeight + "px"' 
-          [style.background]="'url(assets/Muhannadonia.png)'" 
+          [style.background]="'url(assets/Muhannadonia/Muhannadonia.png)'" 
           [style.background-size]="'contain'" 
           style="position: absolute; z-index: -1000;"
     >
@@ -47,7 +47,7 @@
     </div>
 
     <div class="sky" style="z-index: 10;">
-      <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" [id]="'cloud' + i" class="cloud" [ngStyle]="{'background-image': 'url(assets/cloud.png)'}"></div>
+      <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]" [id]="'cloud' + i" class="cloud" [ngStyle]="{'background-image': 'url(assets/Muhannadonia/cloud.png)'}"></div>
     </div>
 
   </div>
@@ -72,14 +72,14 @@
 
         <div *ngIf="selectedMarker != 'Credits'" class="">
           <div class="w3-col l5 w3-hide-medium w3-hide-small">
-            <img [src]="'assets/' + selectedMarker + '.png'"
+            <img [src]="'assets/Muhannadonia/' + selectedMarker + '.png'"
                style="max-width: 100%; max-height: 50vh;"
             >
           </div>
         </div>
         <div *ngIf="selectedMarker != 'Credits'" class="">
           <div class="w3-col m12 s12 w3-hide-large">
-            <img [src]="'assets/' + selectedMarker + '.png'"
+            <img [src]="'assets/Muhannadonia/' + selectedMarker + '.png'"
                style="max-width: 100%; max-height: 35vh;"
             >
           </div>
@@ -212,7 +212,7 @@
                           <div class="w3-cell w3-cell-middle" [class.w3-hide]="flipCard180">
                             <!-- load all images for better seen performance -->
                             <img *ngFor="let experience of data.experiences" 
-                                [src]="'assets/' + data.experiences[selectedExperienceIndex].title + '.png'" 
+                                [src]="'assets/Muhannadonia/' + data.experiences[selectedExperienceIndex].title + '.png'" 
                                 [title]="data.experiences[selectedExperienceIndex].title" 
                                 [alt]="data.experiences[selectedExperienceIndex].title" 
                                 [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience"
@@ -321,7 +321,7 @@
             </div>
             <div class="w3-row w3-margin w3-padding">
               <a href="https://icograms.com">
-                <img src="https://icograms.com/images/logo.svg" [alt]="icogram" style="height:100px; max-width: 100%;">
+                <img src="assets/logos/icograms.svg" [alt]="icogram" style="height:100px; max-width: 100%;">
               </a> 
             </div>
             
@@ -332,7 +332,7 @@
             </div>
             <div class="w3-row w3-margin w3-padding">
               <a href="https://www.bitmoji.com/">
-                <img src="https://www.bitmoji.com/img/0e2df681.logo-home.cache.png" [alt]="Bitmoji" style="height:100px; max-width: 100%;">
+                <img src="assets/logos/bitmoji.svg" [alt]="Bitmoji" style="height:100px; max-width: 100%;">
               </a>              
             </div>
           </div>
@@ -360,7 +360,7 @@
 </div>
 
 <audio autoplay loop style='display: none'>
-  <source src="assets/Village-ambience.mp3" type="audio/mpeg">
+  <source src="assets/Muhannadonia/Village-ambience.mp3" type="audio/mpeg">
 </audio>
 
 

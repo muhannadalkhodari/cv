@@ -48,11 +48,13 @@ export class HomeComponent implements OnInit {
   openApp(app: theme)
   {
     this.appToOpen = app;
-    this.appToOpenColor = 'w3-' + app.color;
+
+    document.documentElement.style.setProperty('--colorLeft' , app.colorLeft);
+    document.documentElement.style.setProperty('--colorRight' , app.colorRight);
 
     setTimeout(() => {
       this.router.navigate(['/'+ app.link ]);
-    }, 1000);
+    }, 2000);
 
   }
 

@@ -9,6 +9,7 @@ import { DarkThemeComponent } from './darkTheme/darkTheme.component';
 import { ColorsThemeComponent } from './colorsTheme/colorsTheme.component';
 import { CartoonThemeComponent } from './cartoonTheme/cartoonTheme.component';
 import { DigitalClockComponent } from './digitalClock/digitalClock.component';
+import { ModernThemeComponent } from './modernTheme/modernTheme.component';
 
 @NgModule({
    declarations: [
@@ -18,7 +19,8 @@ import { DigitalClockComponent } from './digitalClock/digitalClock.component';
       DarkThemeComponent,
       ColorsThemeComponent,
       CartoonThemeComponent,
-      DigitalClockComponent
+      DigitalClockComponent,
+      ModernThemeComponent
    ],
    imports: [
       BrowserModule,

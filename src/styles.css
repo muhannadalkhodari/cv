@@ -1,9 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
 
 /*DIGITAL CLOCK FONT*/
-@font-face{
+@font-face
+{
     font-family:'digital-7';
     src: url('assets/digital-7.ttf');
-   }
+}
 
 
+
+.background
+{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+}
+
+.neo
+{
+    background: #a83a8d !important;
+    box-shadow: 5px 5px 10px #470a38, -5px -5px 10px #cc4dac;
+}
+
+.double-neo
+{
+    background: linear-gradient(-135deg, #cc4dac, #7e1764);
+    box-shadow: 5px -5px 10px #470a38, 5px 5px 10px #cc4dac,
+                10px 10px 10px #470a38, -10px -10px 10px #cc4dac;
+}
+
+.card
+{
+    width: 90%;
+    padding: 20px;
+    margin: 20px 5%;
+    text-align: center;
+    color: white;
+
+}
+
+
+.circle 
+{
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0.767);
+    border-radius: 50%;
+}
+
+.w3-full-center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foldOut
+{
+    transform: scaleY(0);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+.foldIn
+{
+    transform: scaleY(1);
+    max-height: 1500px;
+    transition: all 500ms ease;
+}

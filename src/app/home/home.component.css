@@ -54,6 +54,11 @@
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.6);
 }
 
+.text-shadow
+{
+    text-shadow:2px 2px 0 #444;
+}
+
 .zero-opacity
 {
     opacity: 0;
@@ -98,4 +103,57 @@
 .blank
 {
     background-color: #ffffff10;
+}
+
+.cp-morph 
+{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+    background: var(--colorLeft);
+    animation: cp-morph-animate 1s linear infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: cp-morph-animate;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.cp-spinner 
+{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+
+@keyframes cp-morph-animate
+{
+    0% 
+    {
+        transform: rotate(0) scale(1);
+        border-radius: 0;
+        background: var(--colorRight);
+    }
+
+    25%, 75% 
+    {
+        transform: rotate(180deg) scale(.4);
+        border-radius: 50%;
+        background: var(--colorLeft);
+    }
+    100% 
+    {
+        transform: rotate(360deg) scale(1);
+        border-radius: 0;
+        background: var(--colorRight);
+    }
 }

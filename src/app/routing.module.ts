@@ -1,3 +1,4 @@
+import { ModernThemeComponent } from './modernTheme/modernTheme.component';
 import { CartoonThemeComponent } from './cartoonTheme/cartoonTheme.component';
 import { ColorsThemeComponent } from './colorsTheme/colorsTheme.component';
 import { DarkThemeComponent } from './darkTheme/darkTheme.component';
@@ -13,6 +14,7 @@ const routes: Routes =
     { path: 'darkTheme', component: DarkThemeComponent },
     { path: 'colorsTheme', component: ColorsThemeComponent },
     { path: 'cartoonsTheme', component: CartoonThemeComponent },
+    { path: 'modernTheme', component: ModernThemeComponent },
     { path: '**', component: HomeComponent },
     { path: '', component: HomeComponent }
 ];

@@ -233,15 +233,18 @@
 }
 
 
-@keyframes movingclouds {
+@keyframes movingclouds 
+{
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
-@-webkit-keyframes movingclouds {
+@-webkit-keyframes movingclouds 
+{
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
-@-moz-keyframes movingclouds {
+@-moz-keyframes movingclouds 
+{
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
@@ -279,7 +282,8 @@
 
 /* Next & previous buttons */
 .prev,
-.next {
+.next 
+{
   cursor: pointer;
   /* position: absolute;
   top: 50%;

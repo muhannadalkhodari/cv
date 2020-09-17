@@ -36,7 +36,7 @@ export class CartoonThemeComponent implements OnInit
   showModal = false;
   modalTop: number = -100;
 
-  photosUrl: string = "url('assets/Muhannadonia_";
+  photosUrl: string = "url('assets/Muhannadonia/Muhannadonia_";
 
   selectedMarker: string = null;
   selectedExperienceIndex: number = 0;
