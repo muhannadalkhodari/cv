@@ -8,7 +8,7 @@
 }
 
 
-
+/* 
 .background
 {
     font-family: "Nunito Sans", sans-serif;
@@ -29,7 +29,7 @@
     background: linear-gradient(-135deg, #cc4dac, #7e1764);
     box-shadow: 5px -5px 10px #470a38, 5px 5px 10px #cc4dac,
                 10px 10px 10px #470a38, -10px -10px 10px #cc4dac;
-}
+} */
 
 .card
 {
@@ -56,7 +56,7 @@
     align-items: center;
     justify-content: center;
 }
-
+/* 
 .foldOut
 {
     transform: scaleY(0);
@@ -70,4 +70,4 @@
     transform: scaleY(1);
     max-height: 1500px;
     transition: all 500ms ease;
-}
+} */

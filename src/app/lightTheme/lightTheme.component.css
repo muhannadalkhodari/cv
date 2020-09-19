@@ -23,27 +23,23 @@ body, html {
 /* First image (Logo. Full height) */
 .bgimg-1 
 {
-  background-image: url("/assets/my_photos/me_light_header.jpg");
   min-height: 70vh;
 }
 
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("/assets/light_work.jpg");
   min-height: 400px;
 }
 
 /* Third image (Education) */
 .bgimg-3 {
-  background-image: url("/assets/light_education.jpg");
   min-height: 400px;
 }
 
 /* Fourth image (Contact) */
 .bgimg-4 
 {
-  background-image: url("/assets/light_contact.jpg");
   min-height: 400px;
 }
 
