@@ -22,6 +22,8 @@
     flex-direction: row;
     transform: rotate(90deg) translateY(-100vh);
     transform-origin: top left;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 .slide 
