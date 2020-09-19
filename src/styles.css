@@ -30,7 +30,7 @@
     box-shadow: 5px -5px 10px #470a38, 5px 5px 10px #cc4dac,
                 10px 10px 10px #470a38, -10px -10px 10px #cc4dac;
 } */
-
+/* 
 .card
 {
     width: 90%;
@@ -39,23 +39,9 @@
     text-align: center;
     color: white;
 
-}
+} */
 
 
-.circle 
-{
-    height: 50px;
-    width: 50px;
-    background-color: rgba(255, 255, 255, 0.767);
-    border-radius: 50%;
-}
-
-.w3-full-center
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 /* 
 .foldOut
 {

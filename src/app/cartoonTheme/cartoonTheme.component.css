@@ -1,3 +1,5 @@
+
+
 .outer-wrapper 
 {
     width: 100vh;
@@ -16,14 +18,13 @@
     display:none;
 }
 
+
 .wrapper 
 {
     display: flex;
     flex-direction: row;
     transform: rotate(90deg) translateY(-100vh);
     transform-origin: top left;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 
 .slide 
@@ -235,18 +236,15 @@
 }
 
 
-@keyframes movingclouds 
-{
+@keyframes movingclouds {
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
-@-webkit-keyframes movingclouds 
-{
+@-webkit-keyframes movingclouds {
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
-@-moz-keyframes movingclouds 
-{
+@-moz-keyframes movingclouds {
     0% {margin-left: 100%;}
     100% {margin-left: -150%;}
 }
@@ -284,8 +282,7 @@
 
 /* Next & previous buttons */
 .prev,
-.next 
-{
+.next {
   cursor: pointer;
   /* position: absolute;
   top: 50%;
