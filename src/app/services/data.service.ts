@@ -127,7 +127,7 @@ export class DataService
       title: "Software Developer",
       description: "Analyzing buisness, brain-storming ideas and designing solutions using multiple technolgies.",
       from: "Dec. 2016",
-      to: null,
+      to: "Jan. 2021",
       inSimplified: false,
       places:
       [
@@ -135,6 +135,22 @@ export class DataService
           name: "Syriatel",
           link: "http://www.syriatel.sy",
           imageUrl: "assets/logos/syriatel_logo.png",
+          circle: false
+        }
+      ]
+    },
+    {
+      title: "Software Development Supervisor",
+      description: "Holding the responsibility for the full life-cycle of a software project or module, and an assigned team of developers.",
+      from: "Feb, 2021",
+      to: null,
+      inSimplified: false,
+      places:
+      [
+        {
+          name: "EastMed",
+          link: "http://eastmed.co/",
+          imageUrl: "assets/logos/EastMed_logo.png",
           circle: false
         }
       ]
