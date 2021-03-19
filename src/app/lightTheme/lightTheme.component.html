@@ -91,7 +91,7 @@
         <div class="w3-container">
           <div class="w3-margin">
             <a *ngFor="let place of experience.places" [href]="place.link">
-              <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
+              <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [class.w3-circle]="place.circle" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
             </a>  
           </div>
           <div>
@@ -133,7 +133,7 @@
         <div class="w3-container">
           <div class="w3-margin">
             <a *ngFor="let place of study.places" [href]="place.link">
-              <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" style="height:100px;" [style.max-width]="100/study.places.length + '%'">
+              <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [class.w3-circle]="place.circle" style="height:100px;" [style.max-width]="100/study.places.length + '%'">
             </a> 
           </div>
           <div>

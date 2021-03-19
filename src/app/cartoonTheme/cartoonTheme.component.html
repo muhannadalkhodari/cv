@@ -56,7 +56,7 @@
 <!-- The Modal -->
 <div class="w3-modal" *ngIf="showModal" style="padding-top: 0; display: block;">
   <div class="w3-modal-content" style="width: 90%;" [style.top]="modalTop + '%'"
-       [ngClass]="{'w3-light-grey': selectedMarker == 'Credits'}"
+       [class.w3-light-grey] ="selectedMarker == 'Credits'"
   >
     <div class="w3-container">
 
@@ -221,6 +221,7 @@
                                 [class.w3-hide]="data.experiences[selectedExperienceIndex] != experience"
                                 style="max-height: 50vh; max-width: 100%;"
                             >
+                            <br/>
                             <span class="w3-large">
                               <b>{{data.experiences[selectedExperienceIndex].title}}</b>
                             </span>
@@ -234,11 +235,11 @@
                       </div>
 
                       <div class="flip-card-back">
-                        <div [ngClass]="{'w3-hide': !flipCard180}" class="w3-cell-row">
+                        <div [class.w3-hide]="!flipCard180" class="w3-cell-row">
                           <div class="w3-cell w3-cell-middle">
                             <div class="w3-row">
                               <a *ngFor="let place of data.experiences[selectedExperienceIndex].places" [href]="place.link">
-                                <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [ngClass]="{'w3-circle': place.circle}" class="w3-margin-top" style="max-height:80px;">
+                                <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [class.w3-circle]="place.circle" class="w3-margin-top" style="max-height:80px;">
                               </a> 
                             </div>
                             <div class="w3-row">

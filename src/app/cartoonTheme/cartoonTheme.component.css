@@ -7,7 +7,7 @@
     transform: rotate(-90deg) translateX(-100vh);
     transform-origin: top left;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
     position: absolute;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -363,6 +363,7 @@ button :disabled
 .flip-card-back 
 {
     transform: rotateY(180deg);
+    overflow-y: scroll;
 }
 
 .w3-full-center

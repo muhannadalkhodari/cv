@@ -59,7 +59,7 @@ export class DataService
   aboutMe_short = 'I love analyzing problems, and designing solutions for them';
   aboutMe_long =
   [
-    "Software Developer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
+    "Software Development Supervisor, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
     "Interested in making people the best at what they can be, from art and programming to learning to cook.",
     "I'm always driven by the end user experience of customers. So, my passion is the futuristic concept of NUI (Natural User Interface) and technology immersion in human life. ",
     "Routines? Sorry, not my thing. I'm always looking for new interesting problems to solve. "
@@ -124,6 +124,22 @@ export class DataService
   experiences: experience[] = 
   [
     {
+      title: "Software Development Supervisor",
+      description: "Holding the responsibility for an assigned developers team and the life-cycle of a software project/module.",
+      from: "Feb, 2021",
+      to: null,
+      inSimplified: false,
+      places:
+      [
+        {
+          name: "EastMed",
+          link: "http://eastmed.co/",
+          imageUrl: "assets/logos/EastMed_logo.png",
+          circle: false
+        }
+      ]
+    },
+    {
       title: "Software Developer",
       description: "Analyzing buisness, brain-storming ideas and designing solutions using multiple technolgies.",
       from: "Dec. 2016",
@@ -135,22 +151,6 @@ export class DataService
           name: "Syriatel",
           link: "http://www.syriatel.sy",
           imageUrl: "assets/logos/syriatel_logo.png",
-          circle: false
-        }
-      ]
-    },
-    {
-      title: "Software Development Supervisor",
-      description: "Holding the responsibility for the full life-cycle of a software project or module, and an assigned team of developers.",
-      from: "Feb, 2021",
-      to: null,
-      inSimplified: false,
-      places:
-      [
-        {
-          name: "EastMed",
-          link: "http://eastmed.co/",
-          imageUrl: "assets/logos/EastMed_logo.png",
           circle: false
         }
       ]
@@ -191,9 +191,9 @@ export class DataService
     },
     {
       title: "Content Editor",
-      description: "General entertainment, simplified science, e-business or even specialized robotic educational tutorials, it is our duty to share knowledge on the web.",
+      description: "Entertainment, science, e-business or robotics, it is our duty to share knowledge on the web.",
       from: "Jan. 2017",
-      to: null,
+      to: "Jul. 2020",
       inSimplified: false,
       places:
       [
@@ -274,9 +274,9 @@ export class DataService
   contactDetails: contactDetail[] =
   [
     {
-      detail: "Damascus, Syria",
-      link: "https://goo.gl/maps/rTkABquZqAEPREMN8",
-      icon:   "fa fa-map-marker fa-fw w3-text-red"
+      detail: "Muhannad Al-Khodari",
+      link: "https://www.linkedin.com/in/muhannad-al-khodari/",
+      icon:   "fa fa-linkedin-square fa-fw w3-text-indigo"
     },
     {
       detail: "+963 931874562",
