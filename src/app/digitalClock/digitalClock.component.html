@@ -35,7 +35,9 @@
   <div class="clock">
     <!-- HOUR -->
     <div class="numbers">
-      <p class="hours"></p>
+      <p class="hours">
+        {{time.format('hh')}}
+      </p>
       <p class="placeholder">88</p>
     </div>
 
@@ -45,7 +47,9 @@
 
     <!-- MINUTE -->
     <div class="numbers">
-      <p class="minutes"></p>
+      <p class="minutes">
+        {{time.format('mm')}}
+      </p>
       <p class="placeholder">88</p>
     </div>
 
@@ -55,7 +59,9 @@
 
     <!-- SECOND -->
     <div class="numbers">
-      <p class="seconds"></p>
+      <p class="seconds">
+        {{time.format('ss')}}
+      </p>
       <p class="placeholder">88</p>
     </div>
     
@@ -64,12 +70,12 @@
 
       <!-- AM -->
       <div>
-        <p class="am">am</p>
+        <p class="am" [class.light-on]="time.format('a')=='am'">am</p>
       </div>
 
       <!-- PM -->
       <div>
-        <p class="pm">pm</p>
+        <p class="pm" [class.light-on]="time.format('a')=='pm'">pm</p>
       </div>
     </div>
 

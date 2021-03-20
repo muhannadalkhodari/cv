@@ -2,7 +2,8 @@ import { Component, OnInit, HostListener, AfterViewInit, ViewChild, ElementRef }
 import { DataService } from './../services/data.service';
 
 
-@Component({
+@Component
+({
   selector: 'app-lightTheme',
   templateUrl: './lightTheme.component.html',
   styleUrls: ['./lightTheme.component.css']
@@ -11,6 +12,7 @@ export class LightThemeComponent implements OnInit, AfterViewInit
 {
 
   // @ViewChild('home') homeElement: ElementRef;
+  
   @ViewChild('about') aboutElement: ElementRef;
   @ViewChild('work') workElement: ElementRef;
   @ViewChild('education') educationElement: ElementRef;
@@ -33,6 +35,7 @@ export class LightThemeComponent implements OnInit, AfterViewInit
   ngAfterViewInit()
   {
     // this.homeOffset = this.homeElement.nativeElement.offsetTop;
+
     this.aboutOffset = this.aboutElement.nativeElement.offsetTop;
     this.workOffset = this.workElement.nativeElement.offsetTop;
     this.educationOffset = this.educationElement.nativeElement.offsetTop;
@@ -67,6 +70,7 @@ export class LightThemeComponent implements OnInit, AfterViewInit
     // if (window.pageYOffset >= this.homeOffset && window.pageYOffset < this.aboutOffset) {
     //   this.currentActive = 1;
     // } else 
+
     if (window.pageYOffset >= this.aboutOffset && window.pageYOffset < this.workOffset) {
       this.currentActive = 2;
     } else if (window.pageYOffset >= this.workOffset && window.pageYOffset < this.educationOffset) {
