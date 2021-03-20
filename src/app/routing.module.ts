@@ -10,13 +10,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = 
 [
-    { path: 'lightTheme', component: LightThemeComponent },
-    { path: 'darkTheme', component: DarkThemeComponent },
-    { path: 'colorsTheme', component: ColorsThemeComponent },
-    { path: 'cartoonsTheme', component: CartoonThemeComponent },
-    { path: 'modernTheme', component: ModernThemeComponent },
-    { path: '**', component: HomeComponent },
-    { path: '', component: HomeComponent }
+  //{ path: 'app/:app', component: HomeComponent },
+  // { path: 'app/lightTheme', component: LightThemeComponent },
+  // { path: 'app/darkTheme', component: DarkThemeComponent },
+  // { path: 'app/colorsTheme', component: ColorsThemeComponent },
+  // { path: 'app/cartoonsTheme', component: CartoonThemeComponent },
+  // { path: 'app/modernTheme', component: ModernThemeComponent },
+  { path: '**', component: HomeComponent }
+    
 ];
 
 @NgModule({

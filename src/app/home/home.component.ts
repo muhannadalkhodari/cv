@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { DigitalClockComponent } from "../digitalClock/digitalClock.component";
 import { DataService, theme } from '../services/data.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit 
+{
 
   constructor
   (
@@ -26,7 +27,8 @@ export class HomeComponent implements OnInit {
     if(localStorage.getItem('splashSeen') == 'true')
     {
       this.hideSplashScreen();
-    }
+    };
+    
   }
 
   hideSplashScreen()
@@ -52,8 +54,9 @@ export class HomeComponent implements OnInit {
     document.documentElement.style.setProperty('--colorLeft' , app.colorLeft);
     document.documentElement.style.setProperty('--colorRight' , app.colorRight);
 
-    setTimeout(() => {
-      this.router.navigate(['/'+ app.link ]);
+    setTimeout(() => 
+    {
+      this.router.navigate([""], {queryParams: { app: app.link } });
     }, 2000);
 
   }

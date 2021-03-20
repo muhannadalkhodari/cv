@@ -1,1 +1,19 @@
-<router-outlet></router-outlet>
+<div *ngIf="currentApp == 'home' || currentApp == null">
+    <app-home></app-home>
+</div>
+
+<div *ngIf="currentApp == 'lightTheme'">
+    <app-lighttheme></app-lighttheme>
+</div>
+
+<div *ngIf="currentApp == 'darkTheme'">
+    <app-darkTheme></app-darkTheme>
+</div>
+
+<div *ngIf="currentApp == 'colorsTheme'">
+    <app-colorsTheme></app-colorsTheme>
+</div>
+
+<div *ngIf="currentApp == 'cartoonsTheme'">
+    <app-cartoonsTheme></app-cartoonsTheme>
+</div>
