@@ -11,10 +11,10 @@ export class LightThemeComponent implements OnInit, AfterViewInit
 {
 
   // @ViewChild('home') homeElement: ElementRef;
-  @ViewChild('about', null) aboutElement: ElementRef;
-  @ViewChild('work', null) workElement: ElementRef;
-  @ViewChild('education', null) educationElement: ElementRef;
-  @ViewChild('contact', null) contactElement: ElementRef;
+  @ViewChild('about') aboutElement: ElementRef;
+  @ViewChild('work') workElement: ElementRef;
+  @ViewChild('education') educationElement: ElementRef;
+  @ViewChild('contact') contactElement: ElementRef;
 
   public currentActive = 0;
   public homeOffset: Number = null;
