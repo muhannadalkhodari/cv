@@ -81,7 +81,7 @@ export class DataService
       icons:
       [
         "devicon-angularjs-plain w3-text-red",
-        "devicon-react-original w3-light-blue",
+        "devicon-react-original w3-text-light-blue",
         "devicon-javascript-plain w3-text-amber"
       ],
       value: 80
@@ -97,12 +97,12 @@ export class DataService
       value: 70
     },
     {
-      name: "Graphic Design and Motion (Photoshop, Illustrator, After Effects)",
+      name: "Design (Photoshop, Illustrator, After Effects)",
       icons:
       [
         "devicon-photoshop-plain w3-text-blue",
         "devicon-illustrator-plain w3-orange",
-        "devicon-aftereffects-plain w3-indigo"
+        "devicon-aftereffects-plain w3-text-indigo"
       ],
       value: 60
     },
