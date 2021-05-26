@@ -77,7 +77,7 @@ export class DataService
       value: 90
     },
     {
-      name: "Web Programming (Angular, ReactJS, JavaScript)",
+      name: "Web Programming (Angular, ReactJS, JS)",
       icons:
       [
         "devicon-angularjs-plain w3-text-red",
@@ -238,7 +238,7 @@ export class DataService
     },
     {
       title: "Assistant Teacher",
-      description: "Teaching is a calling, not a job. I was lucky to teach Computer Engineering students about Programming Algorithms and Robotics.",
+      description: "I was lucky to teach Computer Engineering students about Programming Algorithms and Robotics.",
       from: "Feb. 2015",
       to: "Jun. 2016",
       inSimplified: true,
