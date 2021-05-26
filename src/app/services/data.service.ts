@@ -59,7 +59,7 @@ export class DataService
   aboutMe_short = 'I love analyzing problems, and designing solutions for them';
   aboutMe_long =
   [
-    "Software Development Supervisor, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
+    "Software Developer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
     "Interested in making people the best at what they can be, from art and programming to learning to cook.",
     "I'm always driven by the end user experience of customers. So, my passion is the futuristic concept of NUI (Natural User Interface) and technology immersion in human life. ",
     "Routines? Sorry, not my thing. I'm always looking for new interesting problems to solve. "
@@ -77,10 +77,11 @@ export class DataService
       value: 90
     },
     {
-      name: "Web Programming (Angular, JavaScript)",
+      name: "Web Programming (Angular, ReactJS, JavaScript)",
       icons:
       [
         "devicon-angularjs-plain w3-text-red",
+        "devicon-react-original w3-light-blue",
         "devicon-javascript-plain w3-text-amber"
       ],
       value: 80
@@ -96,12 +97,14 @@ export class DataService
       value: 70
     },
     {
-      name: "Graphic Design (Photoshop)",
+      name: "Graphic Design and Motion (Photoshop, Illustrator, After Effects)",
       icons:
       [
-        "devicon-photoshop-plain w3-text-blue"
+        "devicon-photoshop-plain w3-text-blue",
+        "devicon-illustrator-plain w3-orange",
+        "devicon-aftereffects-plain w3-indigo"
       ],
-      value: 70
+      value: 60
     },
     {
       name: "Robotics",
@@ -124,10 +127,26 @@ export class DataService
   experiences: experience[] = 
   [
     {
+      title: "Frontend Engineer",
+      description: "Developing and designing user interfaces for web applications according to clients' requirements and needs.",
+      from: "May, 2021",
+      to: null,
+      inSimplified: false,
+      places:
+      [
+        {
+          name: "AlphaApps",
+          link: "https://www.alpha-apps.ae/",
+          imageUrl: "assets/logos/AlphaApps_logo.png",
+          circle: true
+        }
+      ]
+    },
+    {
       title: "Software Development Supervisor",
       description: "Holding the responsibility for an assigned developers team and the life-cycle of a software project/module.",
       from: "Feb, 2021",
-      to: null,
+      to: "Apr, 2021",
       inSimplified: false,
       places:
       [
