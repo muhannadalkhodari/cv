@@ -128,7 +128,7 @@ export class DataService
   [
     {
       title: "Frontend Engineer",
-      description: "Developing and designing user interfaces for web applications according to clients' requirements and needs.",
+      description: "Developing and designing user interfaces for web applications according to clients' requirements.",
       from: "May, 2021",
       to: null,
       inSimplified: false,
