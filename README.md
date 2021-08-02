@@ -11,7 +11,12 @@ Routines? Sorry, not my thing. I'm always looking for new interesting problems t
 
 ## My Skills
 
-`Web Design (HTML, CSS)`, `Web Programming (Angular, ReactJS, VueJS, JS)`, `Microsoft Programming (Asp.Net, C#, C++)`, `Design (Photoshop, Illustrator, After Effects)`, `Robotics`, `Electronics`.
+* Web Design (`HTML`, `CSS`)
+* Web Programming (`Angular`, `ReactJS`, `VueJS`, `JS`)
+* Microsoft Programming (`Asp.Net`, `C#`, `C++`)
+* Design (`Photoshop`, `Illustrator`, `After Effects`)
+* Robotics
+* Electronics
 
 ## Work Experience
 
