@@ -29,7 +29,7 @@ export class ColorsThemeComponent implements OnInit {
     "brown"
   ];
 
-  selectedColor: string = 'red';
+  selectedColor: string = 'purple';
 
   ngOnInit() {
   }

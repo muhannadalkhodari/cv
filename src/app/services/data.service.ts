@@ -32,8 +32,8 @@ export class DataService
       name: "Classic Colored",
       link: "colorsTheme",
       icon: "palette",
-      colorLeft: "red",
-      colorRight: "pink"
+      colorLeft: "purple",
+      colorRight: "plum"
     },
     {
       name: "Cartoonish Isometric",
@@ -77,7 +77,7 @@ export class DataService
       value: 90
     },
     {
-      name: "Web Programming (Angular, ReactJS, JS)",
+      name: "Web Programming (Angular, ReactJS, VueJS, JS)",
       icons:
       [
         "devicon-angularjs-plain w3-text-red",
@@ -282,7 +282,7 @@ export class DataService
       [
         {
           name: "Syrian Virtual University",
-          link: "https://svuonline.org/ar",
+          link: "https://svuonline.org/",
           imageUrl: "assets/logos/SVU_logo.png",
           circle: false
         }

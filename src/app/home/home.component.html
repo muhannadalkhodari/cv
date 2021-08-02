@@ -35,6 +35,18 @@
         <!-- weather widget end -->
       </div>
 
+      <div class="w3-card-4 box-shadow w3-margin w3-background-with-opacity w3-full-center w3-padding-large w3-large w3-text-white">
+        <i class="material-icons w3-margin">
+          info
+        </i>
+        <div class="w3-center"> 
+          Select a theme from the list below
+        </div>
+        <i class="material-icons w3-margin">
+          info
+        </i>
+      </div>
+
       
     </div>
 
@@ -53,7 +65,7 @@
       <div *ngFor="let theme of data.themes" class="w3-col m3 s3 w3-center w3-margin-bottom" >
         <div class="w3-row">
           <div class="w3-full-center">
-            <div  class="w3-container w3-round-xlarge box-shadow text-shadow app-shortcut w3-margin w3-full-center w3-text-white w3-center"
+            <div  class="w3-container w3-round-xlarge box-shadow text-shadow app-shortcut w3-margin w3-full-center w3-text-white w3-center blinking"
                   [style.background-image]="'linear-gradient(135deg, ' + theme.colorLeft + ',' + theme.colorRight + ')'"
                   (click)="openApp(theme)"
             >
@@ -101,7 +113,12 @@
       Welcome to my CV
     </div>
     <div class="w3-row w3-xlarge w3-center w3-margin-top w3-text-white">
-      Check inside for details
+      This is Muhannad Al-Khodari, 
+      <br/>
+      a Computer/Software/Robotics Engineer...
+    </div>
+    <div class="w3-row w3-xlarge w3-center w3-margin-top w3-text-white">
+      Think that's too much? <br/> Check inside for details
     </div>
 
     <div class="w3-row w3-xxlarge zero-opacity">
@@ -110,7 +127,7 @@
 
     <div class="w3-row w3-xlarge w3-center w3-bottom">
       <div class="w3-margin-bottom w3-full-center">
-        <div class="circle box-shadow w3-full-center" style="cursor: pointer;">
+        <div class="circle box-shadow w3-full-center bouncing" style="cursor: pointer;">
           <i class="material-icons">
             lock_open
           </i>
