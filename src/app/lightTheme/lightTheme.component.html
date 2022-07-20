@@ -94,6 +94,13 @@
               <img [src]="place.imageUrl" [title]="place.name" [alt]="place.name" [class.w3-circle]="place.circle" style="height:100px;" [style.max-width]="100/experience.places.length + '%'">
             </a>  
           </div>
+          
+          <i>@ 
+            <span *ngFor="let place of experience.places, let places_index = index">
+              <a [href]="place.link">{{place.name}}</a>
+              <span *ngIf="places_index!=(experience.places.length-1)">, </span>
+            </span>
+          </i>
           <div>
             <p>
               {{experience.description}}

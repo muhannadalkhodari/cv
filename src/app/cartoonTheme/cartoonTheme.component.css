@@ -374,3 +374,13 @@ button :disabled
     align-items: center;
     justify-content: center;
 }
+
+.blink {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

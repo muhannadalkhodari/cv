@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Who am I?
 
-I am `Muhannad Al-Khodari`, a Software Developer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.
+I am `Muhannad Al-Khodari`, a Software Developer, Product Owner/Designer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.
 Interested in making people the best at what they can be, from art and programming to learning to cook.
 I'm always driven by the end user experience of customers. So, my passion is the futuristic concept of NUI (Natural User Interface) and technology immersion in human life.
 Routines? Sorry, not my thing. I'm always looking for new interesting problems to solve.
