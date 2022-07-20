@@ -59,7 +59,7 @@ export class DataService
   aboutMe_short = 'I love analyzing problems, and designing solutions for them';
   aboutMe_long =
   [
-    "Software Developer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
+    "Software Developer, Product Owner/Designer, Teacher/Trainer and a Content Writer willing to work on a variety of technical and creative projects and fields.",
     "Interested in making people the best at what they can be, from art and programming to learning to cook.",
     "I'm always driven by the end user experience of customers. So, my passion is the futuristic concept of NUI (Natural User Interface) and technology immersion in human life. ",
     "Routines? Sorry, not my thing. I'm always looking for new interesting problems to solve. "
@@ -67,6 +67,26 @@ export class DataService
 
   skills: skill[] =
   [
+    {
+      name: "Inspiring/Leading People",
+      icons:
+      [
+        "fa fa-bullhorn w3-text-red",
+        "fa fa-group w3-text-orange",
+        "fa fa-lightbulb-o w3-text-yellow",
+      ],
+      value: 100
+    },
+    {
+      name: "System/Business Anlaysis and Design",
+      icons:
+      [
+        "fa fa-industry w3-text-black",
+        "fa fa-magic w3-text-purple",
+        "fa fa-laptop w3-text-green",
+      ],
+      value: 80
+    },
     {
       name: "Web Design (HTML, CSS)",
       icons:
@@ -126,6 +146,22 @@ export class DataService
 
   experiences: experience[] = 
   [
+    {
+      title: "Frontend Developer (Remote)",
+      description: "Implementing systems' user interfaces based on approved designs and logic.",
+      from: "May, 2022",
+      to: "Jun, 2022",
+      inSimplified: false,
+      places:
+      [
+        {
+          name: "Baanx",
+          link: "https://www.baanx.com/",
+          imageUrl: "assets/logos/baanx_logo.jpg",
+          circle: true
+        }
+      ]
+    },
     {
       title: "Frontend Engineer",
       description: "Developing and designing user interfaces for web applications according to clients' requirements.",
