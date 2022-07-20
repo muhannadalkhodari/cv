@@ -20,7 +20,8 @@ Routines? Sorry, not my thing. I'm always looking for new interesting problems t
 
 ## Work Experience
 
-* Frontend Engineer / [AlphaApps](https://www.alpha-apps.ae/) `Since May, 2021`
+* Frontend Developer / [Baanx](https://www.baanx.com/) `From May, 2022 to Jun, 2022`
+* Frontend Engineer / [AlphaApps](https://www.alpha-apps.ae/) `From May, 2021 to Apr, 2022`
 * Software Development Supervisor / [EastMed](http://eastmed.co/) `From Feb, 2021 to Apr, 2021`
 * Software Developer / [Syriatel](http://www.syriatel.sy) `From Dec. 2016 to Jan. 2021` 
 * Robotics Trainer / [RoboTech Club](https://www.facebook.com/HmkRoboTech), [USWA Academy](https://www.facebook.com/%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D9%91%D8%A9-%D8%A3%D8%B3%D9%88%D8%A9-USWA-Academy-1063589860322163/), [SyBots](https://www.facebook.com/SyBots) `Since Mar. 2014`
