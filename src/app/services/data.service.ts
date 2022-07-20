@@ -97,11 +97,9 @@ export class DataService
       value: 90
     },
     {
-      name: "Web Programming (Angular, ReactJS, VueJS, JS)",
+      name: "Web Programming (Angular, React, Vue)",
       icons:
       [
-        "devicon-angularjs-plain w3-text-red",
-        "devicon-react-original w3-text-light-blue",
         "devicon-javascript-plain w3-text-amber"
       ],
       value: 80
