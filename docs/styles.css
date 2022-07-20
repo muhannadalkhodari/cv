@@ -1,0 +1,98 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*DIGITAL CLOCK FONT*/
+
+@font-face
+{
+    font-family:'digital-7';
+    src: url('digital-7.ttf');
+}
+
+/* 
+.background
+{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #44476A;
+}
+
+.neo
+{
+    background: #a83a8d !important;
+    box-shadow: 5px 5px 10px #470a38, -5px -5px 10px #cc4dac;
+}
+
+.double-neo
+{
+    background: linear-gradient(-135deg, #cc4dac, #7e1764);
+    box-shadow: 5px -5px 10px #470a38, 5px 5px 10px #cc4dac,
+                10px 10px 10px #470a38, -10px -10px 10px #cc4dac;
+} */
+
+/* 
+.card
+{
+    width: 90%;
+    padding: 20px;
+    margin: 20px 5%;
+    text-align: center;
+    color: white;
+
+} */
+
+/* 
+.foldOut
+{
+    transform: scaleY(0);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 500ms ease;
+}
+
+.foldIn
+{
+    transform: scaleY(1);
+    max-height: 1500px;
+    transition: all 500ms ease;
+} */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(MaterialIcons-Regular.woff2) format('woff2'),
+       url(MaterialIcons-Regular.woff) format('woff'),
+       url(MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+/*# sourceMappingURL=styles.css.map*/
