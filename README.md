@@ -20,6 +20,7 @@ Routines? Sorry, not my thing. I'm always looking for new interesting problems t
 
 ## Work Experience
 
+* Product Owner / [BeInMedia](https://www.beinmedia.net/) `Since July, 2022`
 * Frontend Developer / [Baanx](https://www.baanx.com/) `From May, 2022 to Jun, 2022`
 * Frontend Engineer / [AlphaApps](https://www.alpha-apps.ae/) `From May, 2021 to Apr, 2022`
 * Software Development Supervisor / [EastMed](http://eastmed.co/) `From Feb, 2021 to Apr, 2021`
