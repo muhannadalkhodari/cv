@@ -2426,7 +2426,7 @@ class DataService {
                 value: 100
             },
             {
-                name: "System/Business Anlaysis and Design",
+                name: "System/Business/UX Anlaysis and Design",
                 icons: [
                     "fa fa-industry w3-text-black",
                     "fa fa-magic w3-text-purple",
@@ -2483,6 +2483,21 @@ class DataService {
             }
         ];
         this.experiences = [
+            {
+                title: "Product Owner (Remote)",
+                description: "Designing UX, following up tasks with developers, and writing technical documents",
+                from: "July, 2022",
+                to: "",
+                inSimplified: false,
+                places: [
+                    {
+                        name: "BeInMedia",
+                        link: "https://www.beinmedia.net/",
+                        imageUrl: "assets/logos/BeInMedia.jpg",
+                        circle: false
+                    }
+                ]
+            },
             {
                 title: "Frontend Developer (Remote)",
                 description: "Implementing systems' user interfaces based on approved designs and logic.",
